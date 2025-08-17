@@ -17,6 +17,7 @@
       --accent:#005BAC;   /* Swedish Blue */
       --accent2:#D62828;  /* American Red */
       --accent3:#FFCC00;  /* Swedish Yellow */
+      --accent4:#3C3B6E;  /* American Blue */
       --maxw:1200px;
       --radius:18px;
       --shadow:0 8px 20px rgba(0,0,0,.15);
@@ -62,10 +63,11 @@
     /* Buttons */
     .cta{
       padding:12px 18px; border-radius:12px; font-weight:900; text-transform:uppercase;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
       color:#fff; border:none; box-shadow:var(--shadow);
       transition:.2s ease;
     }
+    .cta.swedish{background:linear-gradient(135deg,var(--accent),var(--accent3));}
+    .cta.american{background:linear-gradient(135deg,var(--accent4),var(--accent2));}
     .cta:hover{transform:translateY(-2px);opacity:.95}
 
     .outline{
@@ -117,8 +119,6 @@
       display:inline-block;
       padding:16px 24px;
       border-radius:50px;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#fff;
       font-weight:900;
       text-transform:uppercase;
       box-shadow:var(--shadow);
@@ -144,7 +144,7 @@
         <a href="#massage">Massage</a>
         <a href="#about">About</a>
         <a href="#pricing">Pricing</a>
-        <a href="#contact" class="cta">Book Free Consult</a>
+        <a href="#contact" class="cta american">Book Free Consult</a>
       </div>
     </nav>
   </header>
@@ -161,8 +161,8 @@
         <span class="pill">Be Pain-Free</span>
       </div>
       <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:18px">
-        <a class="cta" href="#contact">Start Free Consult</a>
-        <a class="cta" href="#pricing">See Packages</a>
+        <a class="cta swedish" href="#contact">Start Free Consult</a>
+        <a class="cta american" href="#pricing">See Packages</a>
       </div>
     </section>
 
@@ -226,7 +226,7 @@
             </select>
           </label>
           <label>Message <textarea name="message"></textarea></label>
-          <button class="cta" type="submit">Send Request</button>
+          <button class="cta swedish" type="submit">Send Request</button>
         </form>
       </div>
       <aside class="card"><h3>Location & Hours</h3><p class="sub">Your City • Mon–Fri 7am–8pm • Sat 9am–2pm</p></aside>
@@ -235,7 +235,7 @@
 
   <!-- Floating CTA -->
   <div class="floating-cta">
-    <a href="#contact">Book Now</a>
+    <a class="cta american" href="#contact">Book Now</a>
   </div>
 
   <footer>
