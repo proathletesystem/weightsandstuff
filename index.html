@@ -5,112 +5,204 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Weights and Stuff — Personal Training & Massage Therapy</title>
   <meta name="description" content="Weights and Stuff offers personal training (pregnancy training, women’s training, sports performance, pain-free movement) and massage therapy (Swedish classic & sports massage). Book a free consult." />
+
+  <!-- Sporty, high-impact type for display + clean UI font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-    --bg:#0e0f12;
-    --card:#151720;
-    --ink:#0e0f12;
-    --text:#f6f7fb;
-    --muted:#aeb3c2;
-    --brand:#67e8f9;
-    --brand-2:#a78bfa;
-    --radius:18px;
-    --maxw:1100px;
-    --shadow:0 10px 30px rgba(0,0,0,.25);
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;height:100%;}
-  body{
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
-  color: var(--text);
-  background: url("WEIGHTS AND STUFF STRENGTH & CONDITIONING.PNG") no-repeat center center fixed;
-  background-size: cover; /* fills the whole screen */
-  line-height: 1.55;
-}
+      --bg:#0a0b0e;
+      --card:#0f1219;
+      --text:#f7f8fc;
+      --muted:#b3b9c9;
+      --accent:#00e5ff;   /* electric cyan */
+      --accent2:#ff2d7a;  /* punchy magenta */
+      --accent3:#16ff72;  /* performance green */
+      --maxw:1200px;
+      --radius:18px;
+      --shadow:0 18px 40px rgba(0,0,0,.35);
+    }
 
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      color: var(--text);
+      background: url("WEIGHTS AND STUFF STRENGTH & CONDITIONING.PNG") no-repeat center center fixed;
+      background-size: cover;
+      line-height:1.55;
+      position:relative;
+      overflow-x:hidden;
+    }
+    /* Dark overlay so text pops over the hero image */
+    body::before{
+      content:"";
+      position:fixed; inset:0;
+      background:
+        radial-gradient(1000px 600px at 80% -10%, rgba(40,46,66,.55) 0%, rgba(10,11,14,.95) 60%),
+        linear-gradient(180deg, rgba(10,11,14,.75), rgba(10,11,14,.95));
+      pointer-events:none;
+      z-index:-1;
+    }
 
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{opacity:.9}
+
+    /* ——— Header / Nav ——— */
     header{
-      position:sticky;top:0;z-index:20;
-      backdrop-filter:saturate(140%) blur(10px);
-      background:linear-gradient(180deg,rgba(14,15,18,.85),rgba(14,15,18,.55));
-      border-bottom:1px solid rgba(255,255,255,.06);
+      position:sticky; top:0; z-index:40;
+      backdrop-filter: saturate(160%) blur(10px);
+      background: rgba(8,10,13,.58);
+      border-bottom: 1px solid rgba(255,255,255,.06);
     }
     .nav{
-      max-width:var(--maxw);margin:auto;display:flex;gap:24px;
-      align-items:center;justify-content:space-between;padding:14px 20px;
+      max-width:var(--maxw); margin:auto;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:24px; padding:14px 22px;
     }
-    .brand{display:flex;gap:12px;align-items:center}
-    .brand img{height:44px;width:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))}
-    .brand strong{font-weight:800;letter-spacing:.2px}
-    .nav a{color:var(--text);opacity:.9}
-    .navlinks{display:flex;gap:18px;flex-wrap:wrap}
+    .brand{display:flex; gap:12px; align-items:center; text-transform:uppercase}
+    .brand strong{
+      font-family:"Bebas Neue", system-ui; font-size:28px; letter-spacing:.8px; line-height:1;
+    }
+    .navlinks{display:flex; gap:22px; flex-wrap:wrap; align-items:center}
+    .navlinks a{
+      color:var(--text); opacity:.9; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+      position:relative; padding-bottom:6px;
+    }
+    .navlinks a::after{
+      content:""; position:absolute; left:0; right:0; bottom:0; height:2px; transform:scaleX(0);
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+      transition:transform .25s ease;
+    }
+    .navlinks a:hover::after{transform:scaleX(1)}
+
     .cta{
-      padding:10px 16px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand-2));
-      color:#0b0d12;font-weight:700;border:none;box-shadow:var(--shadow)
+      padding:12px 18px; border-radius:12px; font-weight:900; letter-spacing:.04em; text-transform:uppercase;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#081015; border:none; box-shadow:var(--shadow);
+      transform:translateZ(0);
+      transition: transform .18s ease, filter .18s ease;
     }
-    .cta:hover{filter:brightness(1.05)}
-    /* Hero */
-    .hero{max-width:var(--maxw);margin:0 auto;padding:72px 20px 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
-    .hero h1{
-      font-family:"Playfair Display",serif;font-size:clamp(36px,6vw,58px);line-height:1.07;margin:.1em 0 .3em;
+    .cta:hover{transform:translateY(-2px); filter:brightness(1.05)}
+    .outline{
+      padding:10px 16px; border-radius:12px; font-weight:800; text-transform:uppercase; letter-spacing:.04em;
+      border:2px solid var(--accent); background:transparent; color:var(--text);
+      transition: background .2s ease, transform .18s ease;
     }
-    .sub{color:var(--muted);font-size:1.1rem}
-    .pills{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 26px}
-    .pill{border:1px solid rgba(255,255,255,.14);padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600}
+    .outline:hover{background:rgba(0,229,255,.08); transform:translateY(-2px)}
+
+    /* ——— Layout ——— */
+    section{max-width:var(--maxw); margin:0 auto; padding:64px 22px}
+    .hero{
+      display:grid; grid-template-columns: minmax(300px,1.05fr) .95fr; gap:42px; align-items:center;
+      padding-top:86px; padding-bottom:40px;
+    }
+    @media (max-width:980px){.hero{grid-template-columns:1fr}}
+    h1,h2,h3{margin:0 0 10px}
+    h1{
+      font-family:"Bebas Neue", system-ui;
+      font-size: clamp(46px, 8.2vw, 92px);
+      line-height: .96;
+      letter-spacing: .6px;
+      text-transform:uppercase;
+      text-shadow: 0 6px 18px rgba(0,0,0,.45);
+      background:linear-gradient(180deg,#fff,#cfefff);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .hero-kicker{
+      font-weight:900; letter-spacing:.18em; text-transform:uppercase; font-size:.88rem; color:var(--muted);
+    }
+    .sub{color:var(--muted); font-size:1.06rem}
+
+    .pills{display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 26px}
+    .pill{
+      border:2px solid transparent;
+      background: linear-gradient(#0f1219,#0f1219) padding-box,
+                  linear-gradient(135deg,var(--accent),var(--accent3)) border-box;
+      padding:10px 14px; border-radius:999px; font-weight:800; color:#e8faff; letter-spacing:.02em;
+      text-transform:uppercase; font-size:.8rem;
+    }
+
     .card{
-      background:linear-gradient(180deg,#181b26,#12141c);border:1px solid rgba(255,255,255,.08);
-      border-radius:var(--radius);box-shadow:var(--shadow);padding:22px
+      background:linear-gradient(180deg,#10141d,#0c0f15);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius: clamp(14px, 1.8vw, var(--radius));
+      box-shadow: var(--shadow);
+      padding:26px;
+      position:relative;
+      overflow:hidden;
     }
-    .hero .card{padding:28px}
-    .hero .card h3{margin:0 0 10px}
-    .hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .outline{padding:10px 16px;border-radius:999px;border:1.5px solid var(--brand);background:transparent;color:var(--text);font-weight:700}
-    /* Sections */
-    section{max-width:var(--maxw);margin:0 auto;padding:56px 20px}
-    h2{font-size:clamp(26px,3.2vw,36px);margin:0 0 18px}
-    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    @media (max-width:980px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}}
+    .card::after{
+      content:""; position:absolute; inset:-1px;
+      border-radius:inherit;
+      pointer-events:none;
+      background:linear-gradient(135deg, rgba(0,229,255,.18), rgba(22,255,114,.08), rgba(255,45,122,.18));
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      padding:1px;  /* creates a glowing border */
+    }
+
+    h2{
+      font-family:"Bebas Neue", system-ui;
+      font-size: clamp(34px, 4.2vw, 52px);
+      letter-spacing:.8px; text-transform:uppercase;
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      margin-bottom:8px;
+    }
+    .kicker{letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:900;font-size:.82rem}
+
+    .grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+    @media (max-width:980px){.grid{grid-template-columns:1fr 1fr}}
     @media (max-width:620px){.grid{grid-template-columns:1fr}}
-    .service{
-      background:linear-gradient(180deg,#171a25,#12141c);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px
+
+    .service{padding:22px; border-radius:16px; background:rgba(12,15,22,.7); border:1px solid rgba(255,255,255,.08)}
+    .service h3{font-weight:900; text-transform:uppercase; letter-spacing:.04em}
+    .badge{
+      display:inline-block; font-weight:900; text-transform:uppercase; letter-spacing:.08em;
+      font-size:.74rem; color:#081015; background:linear-gradient(135deg,var(--accent),var(--accent2));
+      padding:4px 10px; border-radius:999px; margin-bottom:10px;
     }
-    .service h3{margin:0 0 8px;font-size:20px}
-    .service p{margin:0;color:var(--muted)}
-    .badge{font-size:.78rem;color:#0b0d12;background:linear-gradient(135deg,var(--brand),var(--brand-2));border-radius:999px;padding:4px 10px;font-weight:800;display:inline-block;margin-bottom:10px}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:22px}
     @media (max-width:820px){.split{grid-template-columns:1fr}}
-    /* Testimonials */
-    .quotes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+
+    .quotes{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px}
     @media (max-width:980px){.quotes{grid-template-columns:1fr 1fr}}
     @media (max-width:620px){.quotes{grid-template-columns:1fr}}
-    .quote{border-left:4px solid var(--brand);padding:18px;background:rgba(255,255,255,.04);border-radius:12px}
-    .quote p{margin:0 0 10px}
-    .small{font-size:.92rem;color:var(--muted)}
-    /* Contact */
-    form{display:grid;gap:12px}
+    .quote{border-left:4px solid var(--accent); padding:18px; background:rgba(255,255,255,.04); border-radius:12px}
+
+    form{display:grid; gap:12px}
     input,select,textarea{
-      background:#0f1118;color:var(--text);border:1px solid rgba(255,255,255,.14);
-      padding:12px;border-radius:10px;font:inherit
+      background:#0b0e14; color:var(--text); border:1px solid rgba(255,255,255,.14);
+      padding:14px; border-radius:12px; font:inherit
     }
-    textarea{min-height:120px;resize:vertical}
-    footer{border-top:1px solid rgba(255,255,255,.08);color:var(--muted);padding:28px 20px}
-    .foot{max-width:var(--maxw);margin:0 auto;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
-    .kicker{letter-spacing:.14em;text-transform:uppercase;color:var(--brand);font-weight:800;font-size:.8rem}
+    input:focus,select:focus,textarea:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(0,229,255,.15)}
+    textarea{min-height:120px; resize:vertical}
+
+    footer{border-top:1px solid rgba(255,255,255,.08); color:var(--muted); padding:28px 22px}
+    .foot{max-width:var(--maxw); margin:0 auto; display:flex; gap:16px; justify-content:space-between; flex-wrap:wrap}
+
+    /* Subtle diagonal section separators for sporty energy */
+    .divider{
+      height:90px; background:
+        linear-gradient(135deg, rgba(0,229,255,.08), transparent 35%),
+        linear-gradient(-135deg, rgba(255,45,122,.08), transparent 35%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+    }
   </style>
 </head>
 <body>
   <header aria-label="Main navigation">
     <nav class="nav">
       <a class="brand" href="#top" aria-label="Weights and Stuff home">
-        <img src="" alt="Weights and Stuff logo" />
+        <!-- Optional inline logo at nav if you have a smaller mark -->
+        <!-- <img src="logo-small.png" alt="Weights and Stuff logo" height="44"> -->
         <div>
           <strong>WEIGHTS AND STUFF</strong><br>
-          <span class="small">Strength &amp; Conditioning • Massage</span>
+          <span style="font-size:.78rem; color:var(--muted); letter-spacing:.08em;">Strength &amp; Conditioning • Massage</span>
         </div>
       </a>
       <div class="navlinks" role="navigation">
@@ -127,74 +219,78 @@
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
       <div>
-        <div class="kicker">Personal Training • Massage Therapy</div>
-        <h1 id="hero-title">Feel strong. Move well. Be pain-free.</h1>
-        <p class="sub">At <strong>Weights and Stuff</strong>, we help you build confidence and capacity—whether you're pregnant, a woman getting started, chasing sports performance, or simply done with nagging pain. Pair training with restorative massage for faster recovery.</p>
+        <div class="hero-kicker">Personal Training • Massage Therapy</div>
+        <h1 id="hero-title">Feel Strong. Move Well. Be Pain-Free.</h1>
+        <p class="sub">At <strong>Weights and Stuff</strong>, we build confidence and capacity—whether you're pregnant, a woman getting started, chasing sports performance, or done with nagging pain. Pair training with restorative massage for faster recovery.</p>
         <div class="pills" aria-label="core ideas">
           <span class="pill">Pregnancy Training</span>
           <span class="pill">Training for Women</span>
           <span class="pill">Sports Performance</span>
           <span class="pill">Be Pain-Free</span>
         </div>
-        <div class="actions">
-          <a class="cta" href="#contact">Start with a Free Consult</a>
+        <div class="actions" style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px">
+          <a class="cta" href="#contact">Start Free Consult</a>
           <a class="outline" href="#pricing">See Packages</a>
         </div>
       </div>
 
       <aside class="card" aria-labelledby="mini-offer">
-        <h3 id="mini-offer">New here?</h3>
-        <p class="small">Book a 20-minute discovery call. We’ll talk goals, injuries, time, and budget—no pressure.</p>
-        <ul class="small" style="margin:10px 0 0 18px">
-          <li>Screen your movement & history</li>
-          <li>Get a simple plan you can start today</li>
+        <h3 id="mini-offer" style="text-transform:uppercase; letter-spacing:.05em">New here?</h3>
+        <p class="sub" style="font-size:.98rem">Book a 20-minute discovery call. We’ll talk goals, history, time, and budget—no pressure.</p>
+        <ul class="sub" style="margin:10px 0 0 18px; color:#c7ccda">
+          <li>Movement screen & history</li>
+          <li>Simple plan to start today</li>
           <li>See if we’re a good fit</li>
         </ul>
-        <div class="actions"><a class="cta" href="#contact" aria-label="Book discovery call">Book Now</a></div>
+        <div class="actions" style="margin-top:12px"><a class="cta" href="#contact" aria-label="Book discovery call">Book Now</a></div>
       </aside>
     </section>
+
+    <div class="divider" aria-hidden="true"></div>
 
     <!-- TRAINING -->
     <section id="training" aria-labelledby="training-title">
       <h2 id="training-title">Personal Training</h2>
-      <p class="small">Evidence-informed coaching, strength & conditioning, and habit-based nutrition guidance.</p>
+      <p class="sub">Evidence-informed coaching, strength & conditioning, and habit-based nutrition guidance.</p>
 
       <div class="grid" role="list">
         <article class="service" role="listitem">
           <div class="badge">Pregnancy Training</div>
-          <h3>Strong through every trimester</h3>
+          <h3>Strong Through Every Trimester</h3>
           <p>Safe, adaptable workouts for pregnancy and postpartum. Learn breath, pelvic floor coordination, and progressive strength to support you before and after birth.</p>
         </article>
 
         <article class="service" role="listitem">
           <div class="badge">Training for Women</div>
-          <h3>Build muscle & confidence</h3>
+          <h3>Build Muscle & Confidence</h3>
           <p>Beginner-friendly or advanced—programs that prioritize technique, sustainable progress, and feeling great in your body.</p>
         </article>
 
         <article class="service" role="listitem">
           <div class="badge">Sports Performance</div>
-          <h3>Move faster, jump higher</h3>
+          <h3>Move Faster, Jump Higher</h3>
           <p>Strength, power, speed, and conditioning tailored to your sport. Testing, periodization, and recovery strategies to peak on time.</p>
         </article>
 
         <article class="service" role="listitem">
           <div class="badge">Be Pain-Free</div>
-          <h3>Train around pain—then past it</h3>
-          <p>Assessments to find what you <em>can</em> do now. Mobility, stabilization, and graded exposure to get back to the activities you love.</p>
+          <h3>Train Around Pain—Then Past It</h3>
+          <p>Assessments to find what you can do now. Mobility, stabilization, and graded exposure to get back to the activities you love.</p>
         </article>
       </div>
     </section>
+
+    <div class="divider" aria-hidden="true"></div>
 
     <!-- MASSAGE -->
     <section id="massage" class="split" aria-labelledby="massage-title">
       <div>
         <h2 id="massage-title">Massage Therapy</h2>
-        <p class="small">Recover faster and feel better. Sessions are customized to your goals and tolerance.</p>
+        <p class="sub">Recover faster and feel better. Sessions are customized to your goals and tolerance.</p>
         <div class="grid">
           <article class="service">
             <div class="badge">Swedish Classic</div>
-            <h3>Relax, reset, restore</h3>
+            <h3>Relax, Reset, Restore</h3>
             <p>Smooth, rhythmic techniques to reduce stress, improve circulation, and calm your nervous system.</p>
           </article>
           <article class="service">
@@ -206,35 +302,39 @@
       </div>
 
       <aside class="card" aria-label="massage note">
-        <h3>Combine training + massage</h3>
-        <p class="small">Members get priority scheduling and discounted rates on massage therapy. It’s the best of both worlds—build capacity while you restore.</p>
+        <h3 style="text-transform:uppercase; letter-spacing:.05em">Combine Training + Massage</h3>
+        <p class="sub">Members get priority scheduling and discounted rates on massage therapy. It’s the best of both worlds—build capacity while you restore.</p>
         <div class="actions">
-          <a class="cta" href="#pricing">View Member Rates</a>
-          <a class="outline" href="#contact">Ask a question</a>
+          <a class="cta" href="#pricing">Member Rates</a>
+          <a class="outline" href="#contact">Ask a Question</a>
         </div>
       </aside>
     </section>
+
+    <div class="divider" aria-hidden="true"></div>
 
     <!-- ABOUT -->
     <section id="about" class="split" aria-labelledby="about-title">
       <div>
         <h2 id="about-title">About Weights and Stuff</h2>
         <p>We’re strength coaches and licensed massage therapists who believe movement is medicine and strength is for everyone. Our coaching pairs smart programming with real-life flexibility—because your training should fit your season of life, not the other way around.</p>
-        <ul class="small">
+        <ul class="sub">
           <li>Certified strength & conditioning + pre/postnatal training</li>
           <li>Licensed massage therapy with sports & Swedish modalities</li>
           <li>Inclusive, judgment-free environment</li>
         </ul>
       </div>
       <div class="card">
-        <h3>What clients say</h3>
+        <h3 style="text-transform:uppercase; letter-spacing:.05em">What Clients Say</h3>
         <div class="quotes" aria-label="testimonials">
-          <blockquote class="quote"><p>“I trained pain-free for the first time in years and finally got back to running.”</p><div class="small">— J., weekend athlete</div></blockquote>
-          <blockquote class="quote"><p>“Pregnancy training kept me strong and confident. Postpartum return was smooth.”</p><div class="small">— M., new mom</div></blockquote>
-          <blockquote class="quote"><p>“The mix of lifting and sports massage has been a game-changer for recovery.”</p><div class="small">— A., soccer player</div></blockquote>
+          <blockquote class="quote"><p>“I trained pain-free for the first time in years and finally got back to running.”</p><div class="sub">— J., weekend athlete</div></blockquote>
+          <blockquote class="quote"><p>“Pregnancy training kept me strong and confident. Postpartum return was smooth.”</p><div class="sub">— M., new mom</div></blockquote>
+          <blockquote class="quote"><p>“The mix of lifting and sports massage has been a game-changer for recovery.”</p><div class="sub">— A., soccer player</div></blockquote>
         </div>
       </div>
     </section>
+
+    <div class="divider" aria-hidden="true"></div>
 
     <!-- PRICING -->
     <section id="pricing" aria-labelledby="pricing-title">
@@ -243,15 +343,15 @@
         <div class="card">
           <div class="badge">Free</div>
           <h3>Discovery Call (20-min)</h3>
-          <p class="small">Meet your coach/therapist, discuss goals & history, map next steps.</p>
-          <p><strong>$0</strong></p>
+          <p class="sub">Meet your coach/therapist, discuss goals & history, map next steps.</p>
+          <p style="font-weight:900; font-size:1.4rem">$0</p>
           <a class="cta" href="#contact">Book</a>
         </div>
         <div class="card">
           <div class="badge">Popular</div>
           <h3>Personal Training</h3>
-          <p class="small">1:1 coaching, custom program, form feedback, and accountability.</p>
-          <ul class="small" style="margin-left:18px">
+          <p class="sub">1:1 coaching, custom program, form feedback, and accountability.</p>
+          <ul class="sub" style="margin-left:18px">
             <li>Single session: <strong>$95</strong></li>
             <li>4-pack: <strong>$360</strong></li>
             <li>8-pack: <strong>$680</strong></li>
@@ -260,39 +360,38 @@
         <div class="card">
           <div class="badge">Massage</div>
           <h3>Massage Therapy</h3>
-          <ul class="small" style="margin-left:18px">
+          <ul class="sub" style="margin-left:18px">
             <li>Swedish Classic (60m): <strong>$95</strong></li>
             <li>Sports Massage (60m): <strong>$105</strong></li>
           </ul>
-          <p class="small">Ask about member discounts.</p>
+          <p class="sub">Ask about member discounts.</p>
         </div>
         <div class="card">
           <div class="badge">Best Value</div>
           <h3>Train + Massage Bundle</h3>
-          <p class="small">4 training sessions + 2 massages / month.</p>
-          <p><strong>$499 / mo</strong></p>
+          <p class="sub">4 training sessions + 2 massages / month.</p>
+          <p style="font-weight:900; font-size:1.4rem">$499 / mo</p>
           <a class="cta" href="#contact">Get the Bundle</a>
         </div>
       </div>
     </section>
 
+    <div class="divider" aria-hidden="true"></div>
+
     <!-- CONTACT -->
     <section id="contact" class="split" aria-labelledby="contact-title">
       <div>
         <h2 id="contact-title">Book Your Free Consult</h2>
-        <p class="small">Tell us a bit about you and we’ll reach out with times. Prefer texting or WhatsApp? Add that in the message.</p>
+        <p class="sub">Tell us a bit about you and we’ll reach out with times. Prefer texting or WhatsApp? Add that in the message.</p>
         <form name="contact" method="post" data-netlify="true" onsubmit="return submitMsg(this)">
           <input type="hidden" name="form-name" value="contact">
-          <label>
-            Full name
+          <label>Full name
             <input required name="name" autocomplete="name" />
           </label>
-          <label>
-            Email
+          <label>Email
             <input required type="email" name="email" autocomplete="email" />
           </label>
-          <label>
-            Service
+          <label>Service
             <select name="service">
               <option>Personal Training</option>
               <option>Pregnancy Training</option>
@@ -304,20 +403,19 @@
               <option>Unsure — please advise</option>
             </select>
           </label>
-          <label>
-            Message
+          <label>Message
             <textarea name="message" placeholder="Goals, schedule, injuries, questions…"></textarea>
           </label>
           <button class="cta" type="submit">Send Request</button>
         </form>
       </div>
       <aside class="card">
-        <h3>Location & Hours</h3>
-        <p class="small">Your City • Mon–Fri 7am–8pm • Sat 9am–2pm</p>
+        <h3 style="text-transform:uppercase; letter-spacing:.05em">Location & Hours</h3>
+        <p class="sub">Your City • Mon–Fri 7am–8pm • Sat 9am–2pm</p>
         <div style="height:220px;border-radius:12px;background:#0f1118;border:1px solid rgba(255,255,255,.12);display:grid;place-items:center;margin-bottom:14px">
-          <span class="small">Map placeholder — drop in your embed</span>
+          <span class="sub" style="color:#9aa3b7">Map placeholder — drop in your embed</span>
         </div>
-        <p class="small">Email: <a href="mailto:hello@weightsandstuff.com">hello@weightsandstuff.com</a><br>
+        <p class="sub">Email: <a href="mailto:hello@weightsandstuff.com">hello@weightsandstuff.com</a><br>
         Instagram: <a href="https://instagram.com" target="_blank" rel="noopener">Follow us</a></p>
       </aside>
     </section>
@@ -326,16 +424,15 @@
   <footer>
     <div class="foot">
       <div>&copy; <span id="y"></span> Weights and Stuff. All rights reserved.</div>
-      <div class="small">Made with good form and great coffee.</div>
+      <div style="color:#9aa3b7">Made with good form and great coffee.</div>
     </div>
   </footer>
 
   <script>
-    // replace with real handling/endpoint if not using Netlify
     function submitMsg(form){
       alert("Thanks! We’ll get back to you shortly to schedule your consult.");
       form.reset();
-      return false; // remove if you hook up a backend
+      return false;
     }
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
