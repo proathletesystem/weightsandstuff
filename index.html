@@ -139,7 +139,113 @@
   </style>
 </head>
 <body>
-  <!-- ... your full existing content ... -->
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#top">
+        <div>
+          <strong>WEIGHTS AND STUFF</strong><br>
+          <span style="font-size:.78rem;color:var(--muted)">Strength &amp; Conditioning • Massage</span>
+        </div>
+      </a>
+      <div class="navlinks">
+        <a href="#training">Training</a>
+        <a href="#massage">Massage</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="cta">Book Free Consult</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Feel Strong. Move Well. Be Pain-Free.</h1>
+      <p class="sub">At <strong>Weights and Stuff</strong>, we build confidence and capacity—whether you're pregnant, a woman getting started, chasing sports performance, or done with nagging pain. Pair training with restorative massage for faster recovery.</p>
+      <div class="pills">
+        <span class="pill">Pregnancy Training</span>
+        <span class="pill">Womens Lifting Groups</span>
+        <span class="pill">Sports Performance</span>
+        <span class="pill">Be Pain-Free</span>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:18px">
+        <a class="cta" href="#contact">Start Free Consult</a>
+        <a class="outline" href="#pricing">See Packages</a>
+      </div>
+    </section>
+
+    <!-- TRAINING -->
+    <section id="training">
+      <h2>Personal Training</h2>
+      <p class="sub">Evidence-informed coaching, strength & conditioning, and habit-based nutrition guidance.</p>
+      <div class="grid">
+        <article class="service"><div class="badge">Pregnancy Training</div><h3>Strong Through Every Trimester</h3><p>Safe, adaptable workouts for pregnancy and postpartum.</p></article>
+        <article class="service"><div class="badge">Womens Lifting Groups</div><h3>Build Muscle & Confidence</h3><p>Beginner-friendly or advanced programs that prioritize technique and sustainable progress.</p></article>
+        <article class="service"><div class="badge">Sports Performance</div><h3>Move Faster, Jump Higher</h3><p>Strength, power, speed, and conditioning tailored to your sport.</p></article>
+        <article class="service"><div class="badge">Be Pain-Free</div><h3>Train Around Pain—Then Past It</h3><p>Mobility, stabilization, and graded exposure to get back to what you love.</p></article>
+      </div>
+    </section>
+
+    <!-- MASSAGE -->
+    <section id="massage" class="split">
+      <div>
+        <h2>Massage Therapy</h2>
+        <p class="sub">Recover faster and feel better. Sessions are customized to your goals and tolerance.</p>
+        <div class="grid">
+          <article class="service"><div class="badge">Swedish Classic</div><h3>Relax, Reset, Restore</h3><p>Smooth, rhythmic techniques to reduce stress, improve circulation, and calm your system.</p></article>
+          <article class="service"><div class="badge">Sports Massage</div><h3>Prep. Perform. Recover.</h3><p>Focused work for athletes or active humans—pre-event or post-training recovery.</p></article>
+        </div>
+      </div>
+      <aside class="card">
+        <h3>Combine Training + Massage</h3>
+        <p class="sub">Members get priority scheduling and discounted rates. Build capacity while you restore.</p>
+        <div><a class="cta" href="#pricing">Member Rates</a></div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About Weights and Stuff</h2>
+      <p>We’re strength coaches and licensed massage therapists who believe movement is medicine and strength is for everyone. Our coaching pairs smart programming with real-life flexibility—because training should fit your season of life.</p>
+      <ul class="sub" style="text-align:left; max-width:700px; margin:20px auto">
+        <li>Certified strength & conditioning + pre/postnatal training</li>
+        <li>Licensed massage therapy</li>
+        <li>Inclusive, judgment-free environment</li>
+      </ul>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <h2>Packages & Pricing</h2>
+      <div class="grid">
+        <div class="card"><div class="badge">Free</div><h3>Discovery Call</h3><p class="sub">Meet your coach, discuss goals & history, map next steps.</p><p style="font-weight:900; font-size:1.4rem">$0</p></div>
+        <div class="card"><div class="badge">Womens Lifting Group</div><p class="sub">Learn to lift weights with like minded women.</p><p style="font-weight:900; font-size:1.4rem">$499 / mo</p></div>
+        <div class="card"><div class="badge">Popular</div><h3>Personal Training</h3><ul class="sub"><li>Single: <strong>$95</strong></li><li>4-pack: <strong>$360</strong></li><li>8-pack: <strong>$680</strong></li></ul></div>
+        <div class="card"><div class="badge">Massage</div><h3>Massage Therapy</h3><ul class="sub"><li>Swedish Classic (60m): <strong>$95</strong></li><li>Sports Massage (60m): <strong>$105</strong></li></ul></div>
+        <div class="card"><div class="badge">Best Value</div><h3>Train + Massage Bundle</h3><p class="sub">4 training + 2 massages / mo.</p><p style="font-weight:900; font-size:1.4rem">$499 / mo</p></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="split">
+      <div>
+        <h2>Book Your Free Consult</h2>
+        <form name="contact" method="post" data-netlify="true" onsubmit="return submitMsg(this)">
+          <input type="hidden" name="form-name" value="contact">
+          <label>Full name <input required name="name" /></label>
+          <label>Email <input required type="email" name="email" /></label>
+          <label>Service
+            <select name="service">
+              <option>Personal Training</option><option>Pregnancy Training</option><option>Training for Women</option><option>Sports Performance</option><option>Be Pain-Free</option><option>Swedish Classic Massage</option><option>Sports Massage</option>
+            </select>
+          </label>
+          <label>Message <textarea name="message"></textarea></label>
+          <button class="cta" type="submit">Send Request</button>
+        </form>
+      </div>
+      <aside class="card"><h3>Location & Hours</h3><p class="sub">Your City • Mon–Fri 7am–8pm • Sat 9am–2pm</p></aside>
+    </section>
+  </main>
 
   <footer>
     <div class="foot">
