@@ -6,23 +6,20 @@
   <title>Weights and Stuff — Personal Training & Massage Therapy</title>
   <meta name="description" content="Weights and Stuff offers personal training (pregnancy training, women’s training, sports performance, pain-free movement) and massage therapy (Swedish classic & sports massage). Book a free consult." />
 
-  <!-- Sporty, high-impact type for display + clean UI font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0a0b0e;
-      --card:#0f1219;
-      --text:#f7f8fc;
-      --muted:#b3b9c9;
-      --accent:#00e5ff;   /* electric cyan */
-      --accent2:#ff2d7a;  /* punchy magenta */
-      --accent3:#16ff72;  /* performance green */
+      --text:#000;
+      --muted:#333;
+      --accent:#00e5ff;
+      --accent2:#ff2d7a;
+      --accent3:#16ff72;
       --maxw:1200px;
       --radius:18px;
-      --shadow:0 18px 40px rgba(0,0,0,.35);
+      --shadow:0 8px 20px rgba(0,0,0,.15);
     }
 
     *{box-sizing:border-box}
@@ -33,169 +30,82 @@
       background: url("WEIGHTS AND STUFF STRENGTH & CONDITIONING.PNG") no-repeat center center fixed;
       background-size: cover;
       line-height:1.55;
-      position:relative;
       overflow-x:hidden;
     }
     
     a{color:var(--accent);text-decoration:none}
     a:hover{opacity:.9}
 
-    /* ——— Header / Nav ——— */
+    /* Header / Nav */
     header{
       position:sticky; top:0; z-index:40;
-      backdrop-filter: saturate(160%) blur(10px);
-      background: rgba(8,10,13,.58);
-      border-bottom: 1px solid rgba(255,255,255,.06);
+      background:#fff;
+      border-bottom:1px solid #ddd;
     }
     .nav{
       max-width:var(--maxw); margin:auto;
       display:flex; align-items:center; justify-content:space-between;
       gap:24px; padding:14px 22px;
     }
-    .brand{display:flex; gap:12px; align-items:center; text-transform:uppercase}
     .brand strong{
-      font-family:"Bebas Neue", system-ui; font-size:28px; letter-spacing:.8px; line-height:1;
+      font-family:"Bebas Neue", system-ui; font-size:28px; line-height:1;
     }
     .navlinks{display:flex; gap:22px; flex-wrap:wrap; align-items:center}
     .navlinks a{
-      color:var(--text); opacity:.9; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
-      position:relative; padding-bottom:6px;
+      color:var(--text); font-weight:700; text-transform:uppercase;
     }
-    .navlinks a::after{
-      content:""; position:absolute; left:0; right:0; bottom:0; height:2px; transform:scaleX(0);
-      background:linear-gradient(90deg,var(--accent),var(--accent2));
-      transition:transform .25s ease;
-    }
-    .navlinks a:hover::after{transform:scaleX(1)}
 
     .cta{
-      padding:12px 18px; border-radius:12px; font-weight:900; letter-spacing:.04em; text-transform:uppercase;
+      padding:12px 18px; border-radius:12px; font-weight:900; text-transform:uppercase;
       background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#081015; border:none; box-shadow:var(--shadow);
-      transform:translateZ(0);
-      transition: transform .18s ease, filter .18s ease;
+      color:#fff; border:none; box-shadow:var(--shadow);
     }
-    .cta:hover{transform:translateY(-2px); filter:brightness(1.05)}
     .outline{
-      padding:10px 16px; border-radius:12px; font-weight:800; text-transform:uppercase; letter-spacing:.04em;
+      padding:10px 16px; border-radius:12px; font-weight:800; text-transform:uppercase;
       border:2px solid var(--accent); background:transparent; color:var(--text);
-      transition: background .2s ease, transform .18s ease;
     }
-    .outline:hover{background:rgba(0,229,255,.08); transform:translateY(-2px)}
 
-    /* ——— Layout ——— */
+    /* Layout */
     section{max-width:var(--maxw); margin:0 auto; padding:64px 22px}
-    .hero{
-      display:grid; grid-template-columns: minmax(300px,1.05fr) .95fr; gap:42px; align-items:center;
-      padding-top:86px; padding-bottom:40px;
-    }
-    @media (max-width:980px){.hero{grid-template-columns:1fr}}
-    h1,h2,h3{margin:0 0 10px}
-    h1{
-      font-family:"Bebas Neue", system-ui;
-      font-size: clamp(46px, 8.2vw, 92px);
-      line-height: .96;
-      letter-spacing: .6px;
-      text-transform:uppercase;
-      text-shadow: 0 6px 18px rgba(0,0,0,.45);
-      background:linear-gradient(180deg,#fff,#cfefff);
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-    }
-    .hero-kicker{
-      font-weight:900; letter-spacing:.18em; text-transform:uppercase; font-size:.88rem; color:var(--muted);
-    }
+    h1,h2,h3{margin:0 0 10px; color:#000}
+    h1{font-family:"Bebas Neue"; font-size:clamp(46px,8vw,92px)}
+    h2{font-family:"Bebas Neue"; font-size:clamp(34px,5vw,52px)}
     .sub{color:var(--muted); font-size:1.06rem}
 
-    .pills{display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 26px}
-    .pill{
-      border:2px solid transparent;
-      background: linear-gradient(#0f1219,#0f1219) padding-box,
-                  linear-gradient(135deg,var(--accent),var(--accent3)) border-box;
-      padding:10px 14px; border-radius:999px; font-weight:800; color:#e8faff; letter-spacing:.02em;
-      text-transform:uppercase; font-size:.8rem;
-    }
+    .pills{display:flex; flex-wrap:wrap; gap:10px; margin:22px 0}
+    .pill{padding:10px 14px; border-radius:999px; font-weight:800; background:#eee; color:#000}
 
-    .card{
-      background:linear-gradient(180deg,#10141d,#0c0f15);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius: clamp(14px, 1.8vw, var(--radius));
-      box-shadow: var(--shadow);
-      padding:26px;
-      position:relative;
-      overflow:hidden;
+    .card,.service,.quote{
+      background:#fff; color:#000;
+      border:1px solid #ddd; border-radius:var(--radius);
+      box-shadow:var(--shadow); padding:22px;
     }
-    .card::after{
-      content:""; position:absolute; inset:-1px;
-      border-radius:inherit;
-      pointer-events:none;
-      background:linear-gradient(135deg, rgba(0,229,255,.18), rgba(22,255,114,.08), rgba(255,45,122,.18));
-      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude;
-      padding:1px;  /* creates a glowing border */
+    .badge{
+      display:inline-block; font-weight:900; text-transform:uppercase;
+      font-size:.74rem; color:#fff;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      padding:4px 10px; border-radius:999px; margin-bottom:10px;
     }
-
-    h2{
-      font-family:"Bebas Neue", system-ui;
-      font-size: clamp(34px, 4.2vw, 52px);
-      letter-spacing:.8px; text-transform:uppercase;
-      background:linear-gradient(90deg,var(--accent),var(--accent2));
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-      margin-bottom:8px;
-    }
-    .kicker{letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:900;font-size:.82rem}
-
     .grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
     @media (max-width:980px){.grid{grid-template-columns:1fr 1fr}}
     @media (max-width:620px){.grid{grid-template-columns:1fr}}
-
-    .service{padding:22px; border-radius:16px; background:rgba(12,15,22,.7); border:1px solid rgba(255,255,255,.08)}
-    .service h3{font-weight:900; text-transform:uppercase; letter-spacing:.04em}
-    .badge{
-      display:inline-block; font-weight:900; text-transform:uppercase; letter-spacing:.08em;
-      font-size:.74rem; color:#081015; background:linear-gradient(135deg,var(--accent),var(--accent2));
-      padding:4px 10px; border-radius:999px; margin-bottom:10px;
-    }
     .split{display:grid; grid-template-columns:1fr 1fr; gap:22px}
     @media (max-width:820px){.split{grid-template-columns:1fr}}
 
-    .quotes{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px}
-    @media (max-width:980px){.quotes{grid-template-columns:1fr 1fr}}
-    @media (max-width:620px){.quotes{grid-template-columns:1fr}}
-    .quote{border-left:4px solid var(--accent); padding:18px; background:rgba(255,255,255,.04); border-radius:12px}
-
-    form{display:grid; gap:12px}
-    input,select,textarea{
-      background:#0b0e14; color:var(--text); border:1px solid rgba(255,255,255,.14);
-      padding:14px; border-radius:12px; font:inherit
-    }
-    input:focus,select:focus,textarea:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(0,229,255,.15)}
-    textarea{min-height:120px; resize:vertical}
-
-    footer{border-top:1px solid rgba(255,255,255,.08); color:var(--muted); padding:28px 22px}
+    footer{border-top:1px solid #ddd; color:#000; padding:28px 22px; background:#fff}
     .foot{max-width:var(--maxw); margin:0 auto; display:flex; gap:16px; justify-content:space-between; flex-wrap:wrap}
-
-    /* Subtle diagonal section separators for sporty energy */
-    .divider{
-      height:90px; background:
-        linear-gradient(135deg, rgba(0,229,255,.08), transparent 35%),
-        linear-gradient(-135deg, rgba(255,45,122,.08), transparent 35%);
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
-    }
   </style>
 </head>
 <body>
-  <header aria-label="Main navigation">
+  <header>
     <nav class="nav">
-      <a class="brand" href="#top" aria-label="Weights and Stuff home">
-        <!-- Optional inline logo at nav if you have a smaller mark -->
-        <!-- <img src="logo-small.png" alt="Weights and Stuff logo" height="44"> -->
+      <a class="brand" href="#top">
         <div>
           <strong>WEIGHTS AND STUFF</strong><br>
-          <span style="font-size:.78rem; color:var(--muted); letter-spacing:.08em;">Strength &amp; Conditioning • Massage</span>
+          <span style="font-size:.78rem;color:var(--muted)">Strength &amp; Conditioning • Massage</span>
         </div>
       </a>
-      <div class="navlinks" role="navigation">
+      <div class="navlinks">
         <a href="#training">Training</a>
         <a href="#massage">Massage</a>
         <a href="#about">About</a>
@@ -207,206 +117,92 @@
 
   <main id="top">
     <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div>
-        <div class="hero-kicker">Personal Training • Massage Therapy</div>
-        <h1 id="hero-title">Feel Strong. Move Well. Be Pain-Free.</h1>
-        <p class="sub">At <strong>Weights and Stuff</strong>, we build confidence and capacity—whether you're pregnant, a woman getting started, chasing sports performance, or done with nagging pain. Pair training with restorative massage for faster recovery.</p>
-        <div class="pills" aria-label="core ideas">
-          <span class="pill">Pregnancy Training</span>
-          <span class="pill">Womens Lifting Groups</span>
-          <span class="pill">Sports Performance</span>
-          <span class="pill">Be Pain-Free</span>
-        </div>
-        <div class="actions" style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px">
-          <a class="cta" href="#contact">Start Free Consult</a>
-          <a class="outline" href="#pricing">See Packages</a>
-        </div>
+    <section class="hero">
+      <h1>Feel Strong. Move Well. Be Pain-Free.</h1>
+      <p class="sub">At <strong>Weights and Stuff</strong>, we build confidence and capacity—whether you're pregnant, a woman getting started, chasing sports performance, or done with nagging pain. Pair training with restorative massage for faster recovery.</p>
+      <div class="pills">
+        <span class="pill">Pregnancy Training</span>
+        <span class="pill">Womens Lifting Groups</span>
+        <span class="pill">Sports Performance</span>
+        <span class="pill">Be Pain-Free</span>
       </div>
-
-      <aside class="card" aria-labelledby="mini-offer">
-        <h3 id="mini-offer" style="text-transform:uppercase; letter-spacing:.05em">New here?</h3>
-        <p class="sub" style="font-size:.98rem">Book a 20-minute discovery call. We’ll talk goals, history, time, and budget—no pressure.</p>
-        <ul class="sub" style="margin:10px 0 0 18px; color:#c7ccda">
-          <li>Movement screen & history</li>
-          <li>Simple plan to start today</li>
-          <li>See if we’re a good fit</li>
-        </ul>
-        <div class="actions" style="margin-top:12px"><a class="cta" href="#contact" aria-label="Book discovery call">Book Now</a></div>
-      </aside>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px">
+        <a class="cta" href="#contact">Start Free Consult</a>
+        <a class="outline" href="#pricing">See Packages</a>
+      </div>
     </section>
-
-    <div class="divider" aria-hidden="true"></div>
 
     <!-- TRAINING -->
-    <section id="training" aria-labelledby="training-title">
-      <h2 id="training-title">Personal Training</h2>
+    <section id="training">
+      <h2>Personal Training</h2>
       <p class="sub">Evidence-informed coaching, strength & conditioning, and habit-based nutrition guidance.</p>
-
-      <div class="grid" role="list">
-        <article class="service" role="listitem">
-          <div class="badge">Pregnancy Training</div>
-          <h3>Strong Through Every Trimester</h3>
-          <p>Safe, adaptable workouts for pregnancy and postpartum. Learn breath, pelvic floor coordination, and progressive strength to support you before and after birth.</p>
-        </article>
-
-        <article class="service" role="listitem">
-          <div class="badge">Womens Lifting Groups</div>
-          <h3>Build Muscle & Confidence</h3>
-          <p>Beginner-friendly or advanced—programs that prioritize technique, sustainable progress, and feeling great in your body.</p>
-        </article>
-
-        <article class="service" role="listitem">
-          <div class="badge">Sports Performance</div>
-          <h3>Move Faster, Jump Higher</h3>
-          <p>Strength, power, speed, and conditioning tailored to your sport. Testing, periodization, and recovery strategies to peak on time.</p>
-        </article>
-
-        <article class="service" role="listitem">
-          <div class="badge">Be Pain-Free</div>
-          <h3>Train Around Pain—Then Past It</h3>
-          <p>Assessments to find what you can do now. Mobility, stabilization, and graded exposure to get back to the activities you love.</p>
-        </article>
+      <div class="grid">
+        <article class="service"><div class="badge">Pregnancy Training</div><h3>Strong Through Every Trimester</h3><p>Safe, adaptable workouts for pregnancy and postpartum.</p></article>
+        <article class="service"><div class="badge">Womens Lifting Groups</div><h3>Build Muscle & Confidence</h3><p>Beginner-friendly or advanced programs that prioritize technique and sustainable progress.</p></article>
+        <article class="service"><div class="badge">Sports Performance</div><h3>Move Faster, Jump Higher</h3><p>Strength, power, speed, and conditioning tailored to your sport.</p></article>
+        <article class="service"><div class="badge">Be Pain-Free</div><h3>Train Around Pain—Then Past It</h3><p>Mobility, stabilization, and graded exposure to get back to what you love.</p></article>
       </div>
     </section>
-
-    <div class="divider" aria-hidden="true"></div>
 
     <!-- MASSAGE -->
-    <section id="massage" class="split" aria-labelledby="massage-title">
+    <section id="massage" class="split">
       <div>
-        <h2 id="massage-title">Massage Therapy</h2>
+        <h2>Massage Therapy</h2>
         <p class="sub">Recover faster and feel better. Sessions are customized to your goals and tolerance.</p>
         <div class="grid">
-          <article class="service">
-            <div class="badge">Swedish Classic</div>
-            <h3>Relax, Reset, Restore</h3>
-            <p>Smooth, rhythmic techniques to reduce stress, improve circulation, and calm your nervous system.</p>
-          </article>
-          <article class="service">
-            <div class="badge">Sports Massage</div>
-            <h3>Prep. Perform. Recover.</h3>
-            <p>Focused work for athletes or active humans—pre-event activation or post-training recovery to address tight, overworked areas.</p>
-          </article>
+          <article class="service"><div class="badge">Swedish Classic</div><h3>Relax, Reset, Restore</h3><p>Smooth, rhythmic techniques to reduce stress, improve circulation, and calm your system.</p></article>
+          <article class="service"><div class="badge">Sports Massage</div><h3>Prep. Perform. Recover.</h3><p>Focused work for athletes or active humans—pre-event or post-training recovery.</p></article>
         </div>
       </div>
-
-      <aside class="card" aria-label="massage note">
-        <h3 style="text-transform:uppercase; letter-spacing:.05em">Combine Training + Massage</h3>
-        <p class="sub">Members get priority scheduling and discounted rates on massage therapy. It’s the best of both worlds—build capacity while you restore.</p>
-        <div class="actions">
-          <a class="cta" href="#pricing">Member Rates</a>
-          <a class="outline" href="#contact">Ask a Question</a>
-        </div>
-      </aside>
+      <aside class="card"><h3>Combine Training + Massage</h3><p class="sub">Members get priority scheduling and discounted rates. Build capacity while you restore.</p><div><a class="cta" href="#pricing">Member Rates</a></div></aside>
     </section>
-
-    <div class="divider" aria-hidden="true"></div>
 
     <!-- ABOUT -->
-    <section id="about" class="split" aria-labelledby="about-title">
-      <div>
-        <h2 id="about-title">About Weights and Stuff</h2>
-        <p>We’re strength coaches and licensed massage therapists who believe movement is medicine and strength is for everyone. Our coaching pairs smart programming with real-life flexibility—because your training should fit your season of life, not the other way around.</p>
-        <ul class="sub">
-          <li>Certified strength & conditioning + pre/postnatal training</li>
-          <li>Licensed massage therapy with sports & Swedish modalities</li>
-          <li>Inclusive, judgment-free environment</li>
-        </ul>     
-      </div>
+    <section id="about">
+      <h2>About Weights and Stuff</h2>
+      <p>We’re strength coaches and licensed massage therapists who believe movement is medicine and strength is for everyone. Our coaching pairs smart programming with real-life flexibility—because training should fit your season of life.</p>
+      <ul class="sub">
+        <li>Certified strength & conditioning + pre/postnatal training</li>
+        <li>Licensed massage therapy</li>
+        <li>Inclusive, judgment-free environment</li>
+      </ul>
     </section>
-
-    <div class="divider" aria-hidden="true"></div>
 
     <!-- PRICING -->
-    <section id="pricing" aria-labelledby="pricing-title">
-      <h2 id="pricing-title">Packages & Pricing</h2>
+    <section id="pricing">
+      <h2>Packages & Pricing</h2>
       <div class="grid">
-        <div class="card">
-          <div class="badge">Free</div>
-          <h3>Discovery Call (20-min)</h3>
-          <p class="sub">Meet your coach/therapist, discuss goals & history, map next steps.</p>
-          <p style="font-weight:900; font-size:1.4rem">$0</p>
-          <a class="cta" href="#contact">Book</a>
-        </div>
-        <div class="card">
-          <div class="badge">Popular</div>
-          <h3>Personal Training</h3>
-          <p class="sub">1:1 coaching, custom program, form feedback, and accountability.</p>
-          <ul class="sub" style="margin-left:18px">
-            <li>Single session: <strong>$95</strong></li>
-            <li>4-pack: <strong>$360</strong></li>
-            <li>8-pack: <strong>$680</strong></li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="badge">Massage</div>
-          <h3>Massage Therapy</h3>
-          <ul class="sub" style="margin-left:18px">
-            <li>Swedish Classic (60m): <strong>$95</strong></li>
-            <li>Sports Massage (60m): <strong>$105</strong></li>
-          </ul>
-          <p class="sub">Ask about member discounts.</p>
-        </div>
-        <div class="card">
-          <div class="badge">Best Value</div>
-          <h3>Train + Massage Bundle</h3>
-          <p class="sub">4 training sessions + 2 massages / month.</p>
-          <p style="font-weight:900; font-size:1.4rem">$499 / mo</p>
-          <a class="cta" href="#contact">Get the Bundle</a>
-        </div>
+        <div class="card"><div class="badge">Free</div><h3>Discovery Call</h3><p class="sub">Meet your coach, discuss goals & history, map next steps.</p><p style="font-weight:900; font-size:1.4rem">$0</p></div>
+        <div class="card"><div class="badge">Popular</div><h3>Personal Training</h3><ul class="sub"><li>Single: <strong>$95</strong></li><li>4-pack: <strong>$360</strong></li><li>8-pack: <strong>$680</strong></li></ul></div>
+        <div class="card"><div class="badge">Massage</div><h3>Massage Therapy</h3><ul class="sub"><li>Swedish Classic (60m): <strong>$95</strong></li><li>Sports Massage (60m): <strong>$105</strong></li></ul></div>
+        <div class="card"><div class="badge">Best Value</div><h3>Train + Massage Bundle</h3><p class="sub">4 training + 2 massages / mo.</p><p style="font-weight:900; font-size:1.4rem">$499 / mo</p></div>
       </div>
     </section>
 
-    <div class="divider" aria-hidden="true"></div>
-
     <!-- CONTACT -->
-    <section id="contact" class="split" aria-labelledby="contact-title">
+    <section id="contact" class="split">
       <div>
-        <h2 id="contact-title">Book Your Free Consult</h2>
-        <p class="sub">Tell us a bit about you and we’ll reach out with times. Prefer texting or WhatsApp? Add that in the message.</p>
+        <h2>Book Your Free Consult</h2>
         <form name="contact" method="post" data-netlify="true" onsubmit="return submitMsg(this)">
           <input type="hidden" name="form-name" value="contact">
-          <label>Full name
-            <input required name="name" autocomplete="name" />
-          </label>
-          <label>Email
-            <input required type="email" name="email" autocomplete="email" />
-          </label>
+          <label>Full name <input required name="name" /></label>
+          <label>Email <input required type="email" name="email" /></label>
           <label>Service
             <select name="service">
-              <option>Personal Training</option>
-              <option>Pregnancy Training</option>
-              <option>Training for Women</option>
-              <option>Sports Performance</option>
-              <option>Be Pain-Free Program</option>
-              <option>Swedish Classic Massage</option>
-              <option>Sports Massage</option>
-              <option>Unsure — please advise</option>
+              <option>Personal Training</option><option>Pregnancy Training</option><option>Training for Women</option><option>Sports Performance</option><option>Be Pain-Free</option><option>Swedish Classic Massage</option><option>Sports Massage</option>
             </select>
           </label>
-          <label>Message
-            <textarea name="message" placeholder="Goals, schedule, injuries, questions…"></textarea>
-          </label>
+          <label>Message <textarea name="message"></textarea></label>
           <button class="cta" type="submit">Send Request</button>
         </form>
       </div>
-      <aside class="card">
-        <h3 style="text-transform:uppercase; letter-spacing:.05em">Location & Hours</h3>
-        <p class="sub">Your City • Mon–Fri 7am–8pm • Sat 9am–2pm</p>
-        <div style="height:220px;border-radius:12px;background:#0f1118;border:1px solid rgba(255,255,255,.12);display:grid;place-items:center;margin-bottom:14px">
-          <span class="sub" style="color:#9aa3b7">Map placeholder — drop in your embed</span>
-        </div>
-        <p class="sub">Email: <a href="mailto:hello@weightsandstuff.com">hello@weightsandstuff.com</a><br>
-        Instagram: <a href="https://instagram.com" target="_blank" rel="noopener">Follow us</a></p>
-      </aside>
+      <aside class="card"><h3>Location & Hours</h3><p class="sub">Your City • Mon–Fri 7am–8pm • Sat 9am–2pm</p></aside>
     </section>
   </main>
 
   <footer>
     <div class="foot">
       <div>&copy; <span id="y"></span> Weights and Stuff. All rights reserved.</div>
-      <div style="color:#9aa3b7">Made with good form and great coffee.</div>
     </div>
   </footer>
 
