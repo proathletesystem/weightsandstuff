@@ -20,7 +20,7 @@
       --maxw:1200px;
       --radius:18px;
       --shadow:0 8px 20px rgba(0,0,0,.15);
-      --bgfade:0.7; /* adjust background overlay */
+      --bgfade:0.7;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -83,4 +83,82 @@
 
     /* Pills */
     .pills {display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin:22px 0}
-    .pill {padding:10px 14px; border-radius:999px
+    .pill {padding:10px 14px; border-radius:999px; font-weight:800; background:#eee; color:#000}
+
+    /* Cards / Services */
+    .card,.service {
+      background:#fff; color:#000;
+      border:1px solid #ddd; border-radius:var(--radius);
+      box-shadow:var(--shadow); padding:22px; text-align:left;
+    }
+    .badge {
+      display:inline-block; font-weight:900; text-transform:uppercase;
+      font-size:.74rem; color:#fff;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      padding:4px 10px; border-radius:999px; margin-bottom:10px;
+    }
+
+    /* Grids */
+    .grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px; margin-top:24px}
+
+    /* Split layout */
+    .split {display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:center}
+    @media (max-width:820px){.split{grid-template-columns:1fr}}
+
+    /* Forms */
+    form {display:flex; flex-direction:column; gap:14px; text-align:left}
+    label {font-weight:600}
+    input,select,textarea {
+      width:100%; padding:10px; border:1px solid #ccc; border-radius:10px;
+      font-size:1rem; font-family:inherit;
+    }
+    textarea {min-height:120px; resize:vertical}
+
+    /* Footer */
+    footer {border-top:1px solid #ddd; color:#000; padding:28px 22px; background:#fff}
+    .foot {max-width:var(--maxw); margin:0 auto; display:flex; gap:16px; justify-content:space-between; flex-wrap:wrap; text-align:center}
+
+    /* Floating Button */
+    .floating-cta {
+      position:fixed;
+      bottom:20px; right:20px;
+      z-index:100;
+    }
+    .floating-cta a {
+      display:inline-block;
+      padding:16px 24px;
+      border-radius:50px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#fff;
+      font-weight:900;
+      text-transform:uppercase;
+      box-shadow:var(--shadow);
+      transition:.2s ease;
+    }
+    .floating-cta a:hover {transform:scale(1.05);opacity:.95}
+  </style>
+</head>
+<body>
+  <!-- ... your full existing content ... -->
+
+  <footer>
+    <div class="foot">
+      <div>&copy; <span id="y"></span> Weights and Stuff. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Floating Button -->
+  <div class="floating-cta">
+    <a href="#contact">Book Now</a>
+  </div>
+
+  <script>
+    function submitMsg(form){
+      alert("Thanks! We’ll get back to you shortly to schedule your consult.");
+      form.reset();
+      return false;
+    }
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
