@@ -36,17 +36,7 @@
       position:relative;
       overflow-x:hidden;
     }
-    /* Dark overlay so text pops over the hero image */
-    body::before{
-      content:"";
-      position:fixed; inset:0;
-      background:
-        radial-gradient(1000px 600px at 80% -10%, rgba(40,46,66,.55) 0%, rgba(10,11,14,.95) 60%),
-        linear-gradient(180deg, rgba(10,11,14,.75), rgba(10,11,14,.95));
-      pointer-events:none;
-      z-index:-1;
-    }
-
+    
     a{color:var(--accent);text-decoration:none}
     a:hover{opacity:.9}
 
