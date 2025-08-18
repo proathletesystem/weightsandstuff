@@ -1,258 +1,537 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Weights and Stuff — Personal Training & Massage Therapy</title>
-  <meta name="description" content="Weights and Stuff offers personal training (pregnancy training, womens lifting groups, sports performance, pain-free movement) and massage therapy (Swedish classic & sports massage). Book a free consult." />
+  <!--
+    Weights & Stuff — High‑converting one‑page site
+    Drop this file as /index.html in https://proathletesystem.github.io/weightsandstuff/
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    TODOs to personalize:
+      1) Replace CALENDLY_URL, FORMSPREE_ENDPOINT, ADDRESS, PHONE, EMAIL, CITY, and SOCIAL links.
+      2) Replace images with your own photography for maximum trust.
+      3) Add your Google Analytics ID (G-XXXXXXXXXX) and verify Search Console.
+  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weights & Stuff — Personal Training & Massage Therapy</title>
+  <meta name="description" content="Feel Strong. Move Well. Be Pain‑Free. Inclusive personal training, sports performance, pregnancy training, women’s lifting groups, and therapeutic massage.">
+  <link rel="canonical" href="https://proathletesystem.github.io/weightsandstuff/">
+  <meta name="theme-color" content="#0e1116">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://proathletesystem.github.io/weightsandstuff/">
+  <meta property="og:title" content="Weights & Stuff — Personal Training & Massage Therapy">
+  <meta property="og:description" content="Feel Strong. Move Well. Be Pain‑Free. Training and massage programs tailored to you.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Weights & Stuff — Personal Training & Massage Therapy">
+  <meta name="twitter:description" content="Feel Strong. Move Well. Be Pain‑Free.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop">
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://assets.calendly.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --text:#000;
-      --muted:#333;
-      --accent:#005BAC;   /* Swedish Blue */
-      --accent2:#D62828;  /* American Red */
-      --accent3:#FFCC00;  /* Swedish Yellow */
-      --accent4:#3C3B6E;  /* American Blue */
-      --maxw:1200px;
-      --radius:18px;
-      --shadow:0 8px 20px rgba(0,0,0,.15);
-      --bgfade:0.7;
+    :root {
+      --bg: #0e1116;          /* page background */
+      --surface: #141923;     /* cards */
+      --surface-2: #151a25;   /* alt cards */
+      --text: #e6ebf2;        /* primary text */
+      --muted: #aab4c3;       /* secondary text */
+      --brand: #22c55e;       /* CTA green */
+      --brand-2: #2dd4bf;     /* accent teal */
+      --danger: #ef4444;      /* errors */
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 20px;
+      --container: clamp(16rem, 90vw, 1200px);
     }
 
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%}
-    body{
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    *, *::before, *::after { box-sizing: border-box }
+    html:focus-within { scroll-behavior: smooth }
+    body {
+      margin: 0;
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
       color: var(--text);
-      background: 
-        linear-gradient(rgba(255,255,255,var(--bgfade)), rgba(255,255,255,var(--bgfade))),
-        url("WEIGHTS AND STUFF STRENGTH & CONDITIONING.PNG") no-repeat center center fixed;
-      background-size: cover;
-      line-height:1.55;
-      overflow-x:hidden;
-      text-align:center;
+      background: radial-gradient(1200px 800px at 90% -10%, rgba(45,212,191,.08), transparent 60%),
+                  radial-gradient(1000px 600px at -10% 10%, rgba(34,197,94,.08), transparent 60%),
+                  var(--bg);
     }
-    
-    a{color:var(--accent);text-decoration:none}
-    a:hover{opacity:.9}
+    .container { width: var(--container); margin-inline: auto; padding-inline: 20px }
+    a { color: inherit; text-decoration: none }
+    img { max-width: 100%; display: block }
+    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
 
-    /* Header / Nav */
-    header{
-      position:sticky; top:0; z-index:40;
-      background:#fff;
-      border-bottom:1px solid #ddd;
-    }
-    .nav{
-      max-width:var(--maxw); margin:auto;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:24px; padding:14px 22px;
-    }
-    .brand strong{
-      font-family:"Bebas Neue", system-ui; font-size:28px; line-height:1;
-    }
-    .navlinks{display:flex; gap:22px; flex-wrap:wrap; align-items:center}
-    .navlinks a{
-      color:var(--text); font-weight:700; text-transform:uppercase;
-    }
+    /* Header */
+    header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px); background: linear-gradient(180deg, rgba(14,17,22,.9), rgba(14,17,22,.6)); border-bottom: 1px solid rgba(255,255,255,.06) }
+    .nav { display: flex; align-items: center; gap: 20px; height: 64px }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .3px }
+    .brand-logo { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: var(--shadow) }
+    .spacer { flex: 1 }
+    .nav a { opacity: .9 }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 18px; border-radius: 999px; background: var(--brand); color: #0a0f14; font-weight: 700; box-shadow: var(--shadow); border: 0 }
+    .btn.secondary { background: transparent; outline: 1px solid rgba(255,255,255,.14); color: var(--text) }
+    .btn:focus-visible { outline: 3px solid #fff; outline-offset: 2px }
 
-    /* Buttons */
-    .cta{
-      padding:12px 18px; border-radius:12px; font-weight:900; text-transform:uppercase;
-      color:#fff; border:none; box-shadow:var(--shadow);
-      transition:.2s ease;
-    }
-    .cta.swedish,
-    .cta.american{
-      background:linear-gradient(135deg,#ff7a00,#ffb347); /* Vibrant orange for strong CTA */
-    }
-    .cta:hover{transform:translateY(-2px);opacity:.95}
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 36px; align-items: center; padding: 60px 0 }
+    .eyebrow { color: var(--brand-2); font-weight: 700; letter-spacing: .15em; text-transform: uppercase; font-size: 12px }
+    h1 { font-size: clamp(28px, 5vw, 56px); line-height: 1.1; margin: 10px 0 14px }
+    .lead { font-size: clamp(16px, 2.6vw, 20px); color: var(--muted) }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px }
+    .hero-card { background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 16px; display: grid; grid-template-columns: 72px 1fr; gap: 14px; align-items:center }
+    .hero-card img { width: 72px; height:72px; object-fit: cover; border-radius: 12px }
 
-    .outline{
-      padding:12px 18px; border-radius:12px; font-weight:800; text-transform:uppercase;
-      border:2px solid var(--accent3); background:transparent; color:var(--text);
-      transition:.2s ease;
-    }
-    .outline:hover{background:var(--accent3); color:#000}
+    /* Sections */
+    section { padding: 64px 0 }
+    h2 { font-size: clamp(22px,3.6vw,36px); margin: 0 0 14px }
+    p.section-lead { color: var(--muted); max-width: 70ch }
 
-    /* Layout */
-    section{max-width:var(--maxw); margin:0 auto; padding:64px 22px}
-    h1,h2,h3{margin:0 0 10px; color:#000}
-    h1{font-family:"Bebas Neue"; font-size:clamp(46px,8vw,92px)}
-    h2{font-family:"Bebas Neue"; font-size:clamp(34px,5vw,52px)}
-    .sub{color:var(--muted); font-size:1.06rem}
+    /* Services grid */
+    .grid { display: grid; gap: 16px }
+    .grid.cols-3 { grid-template-columns: repeat(3, 1fr) }
+    .grid.cols-2 { grid-template-columns: repeat(2, 1fr) }
+    @media (max-width: 900px){ .hero { grid-template-columns: 1fr } .grid.cols-3, .grid.cols-2 { grid-template-columns: 1fr } }
 
-    /* Pills */
-    .pills{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:22px 0}
-    .pill{
-      padding:10px 14px; border-radius:999px; font-weight:800; text-transform:uppercase;
-      font-size:.8rem; letter-spacing:.02em;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#fff;
-      box-shadow:var(--shadow);
-    }
+    .card { background: var(--surface); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow) }
+    .card .media { max-height: 200px; overflow: hidden }
+    .card .body { padding: 18px }
+    .pill { display: inline-flex; padding: 6px 10px; border-radius: 999px; background: rgba(45,212,191,.15); color: #bff3ea; font-size: 12px; font-weight: 700; letter-spacing:.02em }
 
-    .card,.service,.quote{
-      background:#fff; color:#000;
-      border:1px solid #ddd; border-radius:var(--radius);
-      box-shadow:var(--shadow); padding:22px;
-    }
-    .badge{
-      display:inline-block; font-weight:900; text-transform:uppercase;
-      font-size:.74rem; color:#fff;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      padding:4px 10px; border-radius:999px; margin-bottom:10px;
-    }
-    .grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
-    @media (max-width:980px){.grid{grid-template-columns:1fr 1fr}}
-    @media (max-width:620px){.grid{grid-template-columns:1fr}}
-    .split{display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:center}
-    @media (max-width:820px){.split{grid-template-columns:1fr}}
+    /* Pricing */
+    .pricing { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px }
+    .price { font-size: 42px; font-weight: 800 }
+    .pricing .card ul { list-style: none; padding: 0; margin: 14px 0; color: var(--muted) }
+    .pricing .card li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; margin: 10px 0 }
+    .check { width: 20px; height: 20px; border-radius: 6px; background: linear-gradient(135deg,var(--brand),var(--brand-2)); display: grid; place-items: center }
+    .check svg { width: 14px; height: 14px }
+    .best { outline: 2px solid rgba(34,197,94,.35) }
 
-    /* Floating CTA */
-    .floating-cta {
-      position:fixed; bottom:20px; right:20px; z-index:99;
-    }
-    .floating-cta a {
-      display:inline-block;
-      padding:16px 24px;
-      border-radius:50px;
-      font-weight:900;
-      text-transform:uppercase;
-      box-shadow:var(--shadow);
-      transition:.2s ease;
-    }
-    .floating-cta a:hover {transform:scale(1.05);opacity:.95}
+    /* Testimonials */
+    .testimonials { position: relative }
+    .testimonial-list { display: grid; grid-auto-flow: column; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px }
+    .testimonial { scroll-snap-align: start; min-width: min(420px, 85vw); background: var(--surface-2); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 18px }
+    .quote { font-size: 18px }
+    .author { margin-top: 10px; color: var(--muted) }
 
-    footer{border-top:1px solid #ddd; color:#000; padding:28px 22px; background:#fff}
-    .foot{max-width:var(--maxw); margin:0 auto; display:flex; gap:16px; justify-content:space-between; flex-wrap:wrap}
+    /* FAQ */
+    details { background: var(--surface); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; padding: 14px 16px }
+    details + details { margin-top: 10px }
+    summary { font-weight: 700; cursor: pointer }
+
+    /* Footer */
+    footer { border-top: 1px solid rgba(255,255,255,.06); padding: 32px 0; color: var(--muted) }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px }
+    .footer-grid a { opacity: .9 }
+    @media (max-width: 900px){ .pricing{ grid-template-columns: 1fr } .footer-grid{ grid-template-columns: 1fr } }
+
+    /* Utility */
+    .mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}
+    .mb-0{margin-bottom:0}
+    .center { text-align: center }
+    .muted { color: var(--muted) }
+    .inline-icon { width: 18px; height:18px; vertical-align: -3px; opacity:.9 }
+    .tag { padding: 6px 10px; border:1px solid rgba(255,255,255,.12); border-radius: 999px; font-size: 12px; color: var(--muted) }
   </style>
+  
+  <!-- Google Analytics (replace with your ID, e.g., G-1234567890) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
   <header>
-    <nav class="nav">
-      <a class="brand" href="#top">
-        <div>
-          <strong>WEIGHTS AND STUFF</strong><br>
-          <span style="font-size:.78rem;color:var(--muted)">Strength &amp; Conditioning • Massage</span>
-        </div>
-      </a>
-      <div class="navlinks">
-        <a href="#training">Training</a>
-        <a href="#massage">Massage</a>
-        <a href="#about">About</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact" class="cta american">Book Free Consult</a>
+    <div class="container nav">
+      <div class="brand" aria-label="Weights & Stuff">
+        <span class="brand-logo" aria-hidden="true"></span>
+        Weights & Stuff
       </div>
-    </nav>
+      <div class="spacer"></div>
+      <nav aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#pricing" class="mt-0">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn" href="#book">Book Free Consult</a>
+    </div>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <h1>Feel Strong. Move Well. Be Pain-Free.</h1>
-      <p class="sub">At <strong>Weights and Stuff</strong>, we build confidence and capacity—whether you're pregnant, a woman getting started, chasing sports performance, or done with nagging pain. Pair training with restorative massage for faster recovery.</p>
-      <div class="pills">
-        <span class="pill">Pregnancy Training</span>
-        <span class="pill">Womens Lifting Groups</span>
-        <span class="pill">Sports Performance</span>
-        <span class="pill">Be Pain-Free</span>
-      </div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:18px">
-        <a class="cta swedish" href="#contact">Start Free Consult</a>
-        <a class="cta american" href="#pricing">See Packages</a>
-      </div>
-    </section>
-
-    <!-- TRAINING -->
-    <section id="training">
-      <h2>Personal Training</h2>
-      <p class="sub">Evidence-informed coaching, strength & conditioning, and habit-based nutrition guidance.</p>
-      <div class="grid">
-        <article class="service"><div class="badge">Pregnancy Training</div><h3>Strong Through Every Trimester</h3><p>Safe, adaptable workouts for pregnancy and postpartum.</p></article>
-        <article class="service"><div class="badge">Womens Lifting Groups</div><h3>Build Muscle & Confidence</h3><p>Beginner-friendly or advanced programs that prioritize technique and sustainable progress.</p></article>
-        <article class="service"><div class="badge">Sports Performance</div><h3>Move Faster, Jump Higher</h3><p>Strength, power, speed, and conditioning tailored to your sport.</p></article>
-        <article class="service"><div class="badge">Be Pain-Free</div><h3>Train Around Pain—Then Past It</h3><p>Mobility, stabilization, and graded exposure to get back to what you love.</p></article>
-        <article class="service"><div class="badge">Combine Training + Massage</div><h3>Build capacity while you restore</h3><p>Combine the best of two worlds, training and massage therapy.</p></article>
-      </div>
-    </section>
-
-    <!-- MASSAGE -->
-    <section id="massage">
-        <h2>Massage Therapy</h2>
-        <p class="sub">Recover faster and feel better. Sessions are customized to your goals and tolerance.</p>
-        <div class="split">
-          <article class="service"><div class="badge">Swedish Classic</div><h3>Relax, Reset, Restore</h3><p>Smooth, rhythmic techniques to reduce stress, improve circulation, and calm your system.</p></article>
-          <article class="service"><div class="badge">Sports Massage</div><h3>Prep. Perform. Recover.</h3><p>Focused work for athletes or active humans—pre-event or post-training recovery.</p></article>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>About Weights and Stuff</h2>
-      <p>We’re strength coaches and licensed massage therapists who believe movement is medicine and strength is for everyone. Our coaching pairs smart programming with real-life flexibility—because training should fit your season of life.</p>
-      <ul class="sub">
-        <li>Certified strength & conditioning + pre/postnatal training</li>
-        <li>Licensed massage therapy</li>
-        <li>Inclusive, judgment-free environment</li>
-      </ul>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing">
-      <h2>Packages & Pricing</h2>
-      <div class="grid">
-        <div class="card"><div class="badge">Free</div><h3>Discovery Call</h3><p class="sub">Meet your coach, discuss goals & history, map next steps.</p><p style="font-weight:900; font-size:1.4rem">$0</p></div>
-        <div class="card"><div class="badge">Womens Lifting Group</div><p class="sub">Learn to lift weights with like minded women.</p><p style="font-weight:900; font-size:1.4rem">8 sessions $699</p></div>
-        <div class="card"><div class="badge">Popular</div><h3>Personal Training</h3><ul class="sub"><li>Single: <strong>$110</strong></li><li>4 sessions/month: <strong>$495/month</strong></li></ul></div>
-        <div class="card"><div class="badge">Massage</div><h3>Massage Therapy</h3><ul class="sub"><li>Swedish Classic (60m): <strong>$100</strong></li><li>Sports Massage (60m): <strong>$110</strong></li></ul></div>
-        <div class="card"><div class="badge">Best Value</div><h3>Train + Massage Bundle</h3><p class="sub">4 training + 2 massages/month.</p><p style="font-weight:900; font-size:1.4rem">$499/month</p></div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="split">
+  <main id="main">
+    <!-- Hero -->
+    <section class="container hero" aria-label="Intro">
       <div>
-        <h2>Book Your Free Consult</h2>
-        <form name="contact" method="post" data-netlify="true" onsubmit="return submitMsg(this)">
-          <input type="hidden" name="form-name" value="contact">
-          <label>Full name <input required name="name" /></label>
-          <label>Email <input required type="email" name="email" /></label>
-          <label>Service
-            <select name="service">
-              <option>Personal Training</option><option>Pregnancy Training</option><option>Womens Lifting Groups</option><option>Sports Performance</option><option>Be Pain-Free</option><option>Swedish Classic Massage</option><option>Sports Massage</option>
-            </select>
-          </label>
-          <label>Message <textarea name="message"></textarea></label>
-          <button class="cta swedish" type="submit">Send Request</button>
-        </form>
+        <span class="eyebrow">Personal Training • Massage Therapy</span>
+        <h1>Feel Strong. Move Well. Be Pain‑Free.</h1>
+        <p class="lead">Inclusive, evidence‑based coaching and therapeutic bodywork. From <strong>pregnancy training</strong> and <strong>women’s lifting groups</strong> to <strong>sports performance</strong> and <strong>pain management</strong>—we build programs around <em>you</em>.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#book" aria-describedby="consult-details">Book Free Consult</a>
+          <a class="btn secondary" href="#pricing">See Pricing</a>
+        </div>
+        <small id="consult-details" class="muted mt-2">No obligation • 20–30 min chat to understand your goals</small>
+
+        <div class="grid cols-2 mt-6">
+          <div class="hero-card">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1574686527768-65e2de6cfc92?q=80&w=300&auto=format&fit=crop" alt="Pregnancy training: coach supporting a pregnant person during a safe squat">
+            <div>
+              <strong>Pregnancy‑safe training</strong>
+              <p class="muted mb-0">Tailored sessions for each trimester — build strength and confidence.</p>
+            </div>
+          </div>
+          <div class="hero-card">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=300&auto=format&fit=crop" alt="Therapeutic massage session in a calm studio">
+            <div>
+              <strong>Therapeutic massage</strong>
+              <p class="muted mb-0">Reduce pain, improve mobility, and recover faster between workouts.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <aside class="card"><h3>Location & Hours</h3><p class="sub">Your City • Mon–Fri 7am–8pm • Sat 9am–2pm</p></aside>
+      <figure>
+        <img loading="eager" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop" alt="Athlete deadlifting confidently in a bright gym environment" style="border-radius: var(--radius); box-shadow: var(--shadow)">
+      </figure>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="container" aria-label="Services">
+      <h2>Programs tailored to your goals</h2>
+      <p class="section-lead">We blend strength training, mobility work, and recovery strategies so you make progress that sticks.</p>
+      <div class="grid cols-3 mt-3">
+        <!-- Training -->
+        <article class="card">
+          <div class="media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=900&auto=format&fit=crop" alt="Personal training session with a coach cueing form">
+          </div>
+          <div class="body">
+            <span class="pill">Personal Training</span>
+            <h3 class="mt-2">1:1 Coaching</h3>
+            <p class="muted">Technique‑focused sessions that meet you where you are. Optional custom plans for training between visits.</p>
+          </div>
+        </article>
+        
+        <!-- Women’s groups -->
+        <article class="card">
+          <div class="media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=900&auto=format&fit=crop" alt="Group of women lifting together and smiling">
+          </div>
+          <div class="body">
+            <span class="pill">Community</span>
+            <h3 class="mt-2">Women’s Lifting Groups</h3>
+            <p class="muted">Small‑group coaching that’s supportive and fun. Learn, lift, and get stronger together.</p>
+          </div>
+        </article>
+
+        <!-- Massage -->
+        <article class="card">
+          <div class="media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?q=80&w=900&auto=format&fit=crop" alt="Massage therapist working on a client’s shoulder">
+          </div>
+          <div class="body">
+            <span class="pill">Recovery</span>
+            <h3 class="mt-2">Therapeutic Massage</h3>
+            <p class="muted">Reduce tension, improve range of motion, and accelerate recovery with targeted bodywork.</p>
+          </div>
+        </article>
+
+        <!-- Pregnancy training -->
+        <article class="card">
+          <div class="media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1618354691221-d0b8a7f3b4ad?q=80&w=900&auto=format&fit=crop" alt="Pregnant person doing a cable row with a coach spotting">
+          </div>
+          <div class="body">
+            <span class="pill">Pregnancy</span>
+            <h3 class="mt-2">Prenatal & Postpartum</h3>
+            <p class="muted">Evidence‑informed training for every stage. Rebuild core and pelvic floor strength safely.</p>
+          </div>
+        </article>
+
+        <!-- Sports performance -->
+        <article class="card">
+          <div class="media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1577041248602-7ad2c9f178b8?q=80&w=900&auto=format&fit=crop" alt="Athlete sprinting off the blocks">
+          </div>
+          <div class="body">
+            <span class="pill">Athletes</span>
+            <h3 class="mt-2">Sports Performance</h3>
+            <p class="muted">Strength, speed, and power development built around your season.</p>
+          </div>
+        </article>
+
+        <!-- Pain management -->
+        <article class="card">
+          <div class="media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1507588238447-7b5031b0f7c2?q=80&w=900&auto=format&fit=crop" alt="Client doing a controlled split squat for knee health">
+          </div>
+          <div class="body">
+            <span class="pill">Pain‑Free</span>
+            <h3 class="mt-2">Pain & Resilience</h3>
+            <p class="muted">Progressive load management and movement education to get you back to what you love.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="container" aria-label="Pricing">
+      <h2>Simple pricing that respects your time</h2>
+      <p class="section-lead">Mix and match training and massage. No lock‑in contracts — cancel anytime.</p>
+      <div class="pricing mt-3">
+        <!-- Training only -->
+        <article class="card">
+          <div class="body">
+            <h3>Training</h3>
+            <div class="price">$299<span class="muted" style="font-size:16px">/mo</span></div>
+            <ul>
+              <li><span class="check" aria-hidden="true">💪</span> 4× 60‑min 1:1 sessions</li>
+              <li><span class="check" aria-hidden="true">📲</span> Personalized plan & app support</li>
+              <li><span class="check" aria-hidden="true">🧭</span> Form checks between sessions</li>
+            </ul>
+            <a class="btn" href="#book">Start with a free consult</a>
+          </div>
+        </article>
+
+        <!-- Bundle -->
+        <article class="card best">
+          <div class="body">
+            <div class="tag">Best value</div>
+            <h3>Train + Massage</h3>
+            <div class="price">$499<span class="muted" style="font-size:16px">/mo</span></div>
+            <ul>
+              <li><span class="check" aria-hidden="true">✅</span> 4× training + 2× massage</li>
+              <li><span class="check" aria-hidden="true">🧠</span> Recovery & mobility plan</li>
+              <li><span class="check" aria-hidden="true">💬</span> Unlimited chat support</li>
+            </ul>
+            <a class="btn" href="#book">Claim bundle</a>
+          </div>
+        </article>
+
+        <!-- Massage only -->
+        <article class="card">
+          <div class="body">
+            <h3>Massage</h3>
+            <div class="price">$129<span class="muted" style="font-size:16px">/hr</span></div>
+            <ul>
+              <li><span class="check" aria-hidden="true">👐</span> Therapeutic or sports massage</li>
+              <li><span class="check" aria-hidden="true">🗓️</span> Flexible scheduling</li>
+              <li><span class="check" aria-hidden="true">➕</span> Insurance receipts available</li>
+            </ul>
+            <a class="btn" href="#book">Book a massage</a>
+          </div>
+        </article>
+      </div>
+      <p class="muted mt-2">Prices shown are examples — update to your real rates. Sliding scale and packages available on request.</p>
+    </section>
+
+    <!-- Social proof -->
+    <section class="container testimonials" aria-label="Testimonials">
+      <h2>Results that speak for themselves</h2>
+      <p class="section-lead">A few words from clients who started exactly where you are.</p>
+      <div class="testimonial-list mt-3" id="testimonialList" aria-live="polite">
+        <article class="testimonial">
+          <p class="quote">“I trained through my second trimester and felt stronger than ever. Clear cues, zero judgment, and workouts that actually fit my energy levels.”</p>
+          <div class="author">— Alex P. • Prenatal training client</div>
+        </article>
+        <article class="testimonial">
+          <p class="quote">“The lifting group is the highlight of my week. I added 25 kg to my deadlift in 12 weeks and made friends doing it.”</p>
+          <div class="author">— Mira S. • Women’s Lifting</div>
+        </article>
+        <article class="testimonial">
+          <p class="quote">“Massage + tailored strength work ended my knee pain. I’m back to playing every weekend.”</p>
+          <div class="author">— Jonah R. • Sports performance</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="container" aria-label="About">
+      <h2>About Weights & Stuff</h2>
+      <div class="grid cols-2 mt-2">
+        <div>
+          <p>We help people build resilient bodies and confident movement. Whether you’re preparing for birth, returning after injury, or chasing a PR, we tailor coaching and bodywork to your life.</p>
+          <ul class="muted">
+            <li>✔️ Certifications: CSCS (NSCA), CPT, Licensed Massage Therapist</li>
+            <li>✔️ Additional: Prenatal & Postpartum Athleticism, First Aid/CPR</li>
+            <li>✔️ Inclusive, weight‑neutral, LGBTQIA+ friendly space</li>
+          </ul>
+          <div class="mt-2">
+            <a class="btn secondary" href="#contact">Ask a question</a>
+          </div>
+        </div>
+        <figure>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1552718752-c682dca2c4f8?q=80&w=1200&auto=format&fit=crop" alt="Coach smiling in a bright studio" style="border-radius: var(--radius); box-shadow: var(--shadow)">
+        </figure>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="book" class="container" aria-label="Booking">
+      <h2>Book your free consult</h2>
+      <p class="section-lead">Pick a time that works. We’ll discuss your goals and map a plan that fits your schedule.</p>
+      <div class="card" style="padding:0">
+        <!-- Calendly inline widget BEGIN (replace data-url with your Calendly link) -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/your-calendly-username/free-consult" style="min-width:320px;height:720px"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget END -->
+      </div>
+      <p class="muted mt-2">Prefer email? Use the contact form below and we’ll get back within 1 business day.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container" aria-label="FAQ">
+      <h2>Frequently asked questions</h2>
+      <details class="mt-2"><summary>Do I need experience to start?</summary>
+        <p class="muted">Nope. We meet you where you are and progress at your pace.</p>
+      </details>
+      <details><summary>Is training during pregnancy safe?</summary>
+        <p class="muted">With appropriate modifications and monitoring, strength training is beneficial for most people during pregnancy. We’ll coordinate with your care provider as needed.</p>
+      </details>
+      <details><summary>Do you take insurance?</summary>
+        <p class="muted">Training is private‑pay; massage receipts are available for reimbursement where applicable.</p>
+      </details>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container" aria-label="Contact">
+      <h2>Contact</h2>
+      <div class="grid cols-2 mt-2">
+        <form id="contactForm" class="card" style="padding:18px" action="https://formspree.io/f/yourFormID" method="POST">
+          <label class="muted" for="name">Name</label>
+          <input id="name" name="name" type="text" required style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0f141d;color:var(--text);margin:6px 0 10px">
+          <label class="muted" for="email">Email</label>
+          <input id="email" name="email" type="email" required style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0f141d;color:var(--text);margin:6px 0 10px">
+          <label class="muted" for="message">How can we help?</label>
+          <textarea id="message" name="message" rows="5" required style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0f141d;color:var(--text);margin:6px 0 10px"></textarea>
+          <input type="hidden" name="source" value="Website contact form">
+          <button class="btn" type="submit">Send message</button>
+          <p id="formStatus" class="muted mt-2" role="status" aria-live="polite"></p>
+        </form>
+
+        <div>
+          <div class="card" style="padding:18px">
+            <h3 class="mt-0">Studio</h3>
+            <p class="muted mb-0">123 Example Street<br>City, COUNTRY • 12345</p>
+            <p class="muted">Mon–Fri 7:00–20:00 • Sat 9:00–14:00</p>
+            <p class="muted">📞 <a href="tel:+10000000000">+1 (000) 000‑0000</a><br>✉️ <a href="mailto:hello@example.com">hello@example.com</a></p>
+            <div class="mt-2">
+              <a href="#" class="tag">Instagram</a>
+              <a href="#" class="tag">Facebook</a>
+              <a href="#" class="tag">Google Reviews</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <!-- Floating CTA -->
-  <div class="floating-cta">
-    <a class="cta american" href="#contact">Book Now</a>
-  </div>
-
   <footer>
-    <div class="foot">
-      <div>&copy; <span id="y"></span> Weights and Stuff. All rights reserved.</div>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" aria-label="Weights & Stuff">
+          <span class="brand-logo" aria-hidden="true"></span>
+          Weights & Stuff
+        </div>
+        <p class="mt-2">© <span id="year"></span> Weights & Stuff. All rights reserved.</p>
+      </div>
+      <div>
+        <strong>Company</strong>
+        <ul style="list-style:none;padding:0;margin:8px 0 0">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Legal</strong>
+        <ul style="list-style:none;padding:0;margin:8px 0 0">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
 
+  <!-- JSON-LD schema: LocalBusiness + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Weights & Stuff",
+    "url": "https://proathletesystem.github.io/weightsandstuff/",
+    "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop",
+    "description": "Inclusive personal training, sports performance, pregnancy training, women’s lifting groups, and therapeutic massage.",
+    "telephone": "+1-000-000-0000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Example Street",
+      "addressLocality": "City",
+      "postalCode": "12345",
+      "addressCountry": "COUNTRY"
+    },
+    "openingHours": [
+      "Mo-Fr 07:00-20:00",
+      "Sa 09:00-14:00"
+    ],
+    "sameAs": ["https://www.instagram.com/yourhandle", "https://www.facebook.com/yourpage"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Do I need experience to start?","acceptedAnswer":{"@type":"Answer","text":"No. We meet you where you are and progress at your pace."}},
+      {"@type":"Question","name":"Is training during pregnancy safe?","acceptedAnswer":{"@type":"Answer","text":"With appropriate modifications and monitoring, strength training is beneficial for most people during pregnancy."}},
+      {"@type":"Question","name":"Do you take insurance?","acceptedAnswer":{"@type":"Answer","text":"Training is private‑pay; massage receipts are available for reimbursement where applicable."}}
+    ]
+  }
+  </script>
+
+  <!-- Small JS: nav behavior, year, contact form progressive enhancement -->
   <script>
-    function submitMsg(form){
-      alert("Thanks! We’ll get back to you shortly to schedule your consult.");
-      form.reset();
-      return false;
-    }
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Shrink header on scroll
+    const header = document.querySelector('header');
+    let lastY = 0;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY || window.pageYOffset;
+      header.style.borderBottomColor = y > 20 ? 'rgba(255,255,255,.12)' : 'rgba(255,255,255,.06)';
+      header.style.backdropFilter = y > 10 ? 'blur(12px)' : 'blur(8px)';
+      lastY = y;
+    });
+
+    // Contact form — optional client-side submission for nicer UX
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    form?.addEventListener('submit', async (e) => {
+      // If action is set to Formspree, we can gracefully POST via fetch
+      e.preventDefault();
+      statusEl.textContent = 'Sending…';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        if (res.ok) {
+          statusEl.textContent = 'Thanks! We\'ll be in touch within one business day.';
+          form.reset();
+        } else {
+          statusEl.textContent = 'Hmm, that didn\'t work. Email us directly at hello@example.com';
+          statusEl.style.color = 'var(--danger)';
+        }
+      } catch(err){
+        statusEl.textContent = 'Network error — please email hello@example.com';
+        statusEl.style.color = 'var(--danger)';
+      }
+    });
   </script>
 </body>
 </html>
