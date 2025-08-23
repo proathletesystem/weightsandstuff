@@ -247,59 +247,10 @@
     </section>
   </main>
 
-  <!-- Floating CTA (points to Waitlist) -->
-  <div class="floating-cta">
-    <a class="cta waitlist" href="#waitlist">Join Waitlist</a>
-  </div>
-
-  <footer>
-    <div class="foot">
-      <div>&copy; <span id="y"></span> Weights and Stuff. All rights reserved.</div>
-      <div>High demand: new clients join via our <a href="#waitlist">priority waitlist</a>.</div>
-    </div>
-  </footer>
-
-  <script>
-    function submitMsg(form){
-      alert("Thanks! We’ll get back to you shortly to schedule your consult.");
-      form.reset();
-      return false;
-    }
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // --- OPTIONAL: forward UTM/ref params to the embedded waitlist form (Typeform supports #hidden fields)
-    (function forwardUTM(){
-      var frame = document.getElementById('waitlistFrame');
-      if(!frame || !frame.src) return;
-
-      function appendParams(url, params){
-        try{
-          // If Typeform-style hash exists, keep it; else use standard query
-          if(url.indexOf('#')>-1){
-            var parts = url.split('#'); var base=parts[0], hash=parts[1]||'';
-            var sp = new URLSearchParams(hash);
-            Object.keys(params).forEach(function(k){ if(params[k]) sp.set(k, params[k]); });
-            return base + '#' + sp.toString();
-          } else {
-            var u = new URL(url, window.location.origin);
-            Object.keys(params).forEach(function(k){ if(params[k]) u.searchParams.set(k, params[k]); });
-            return u.toString();
-          }
-        }catch(e){ return url; }
-      }
-
-      var qp = new URLSearchParams(window.location.search);
-      var utm = {
-        utm_source: qp.get('utm_source') || '',
-        utm_medium: qp.get('utm_medium') || '',
-        utm_campaign: qp.get('utm_campaign') || '',
-        utm_content: qp.get('utm_content') || '',
-        utm_term: qp.get('utm_term') || '',
-        ref: qp.get('ref') || '',
-        source: qp.get('source') || 'website'
-      };
-      frame.src = appendParams(frame.src, utm);
-    })();
-  </script>
+  <!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/henketh', text: 'Book a consultation now!', color: '#ffff00', textColor: '#1a1a1a', branding: true }); }</script>
+<!-- Calendly badge widget end -->
 </body>
 </html>
