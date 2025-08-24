@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pregnancy Training — Strong Through Every Trimester</title>
+  <meta name="description" content="Safe, adaptable workouts for pregnancy and postpartum. Strong through every trimester.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --ink:#e8ecef;
+      --muted:#a9b3bd;
+      --accent:#9AE6B4;
+      --accent-ink:#0b0c10;
+      --card:#12141a;
+      --stroke:#1f232b;
+      --link:#c7f0ff;
+      --focus:#7dd3fc;
+      --max:1100px;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max);margin-inline:auto;padding:24px}
+
+    /* Top bar */
+    .top{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding-block:10px;position:sticky;top:0;background:linear-gradient(180deg,rgba(11,12,16,.95),rgba(11,12,16,.75));backdrop-filter:saturate(1.4) blur(6px);z-index:10;border-bottom:1px solid var(--stroke)
+    }
+    .brand{font-weight:900;letter-spacing:.02em}
+    .brand span{opacity:.6;font-weight:700}
+    .nav{display:flex;gap:18px;flex-wrap:wrap}
+    .nav a{font-weight:600;opacity:.9}
+
+    /* Hero */
+    .hero{padding:72px 0 32px;display:grid;gap:18px}
+    .eyebrow{font-size:.95rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    h1{font-size:clamp(2rem,5vw,3.25rem);line-height:1.05;margin:0;font-weight:900}
+    .lead{font-size:1.125rem;color:var(--muted);max-width:65ch}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:999px;border:1px solid var(--stroke);background:transparent;color:var(--ink);font-weight:700}
+    .btn.primary{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+    .btn:hover{transform:translateY(-1px)}
+
+    /* Sections */
+    section{padding:24px 0;border-top:1px solid var(--stroke)}
+    h2{font-size:1.6rem;margin:0 0 10px}
+    .kicker{color:var(--muted);font-weight:600}
+
+    /* Feature grid */
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+    .col-4{grid-column:span 4}
+    .col-6{grid-column:span 6}
+    .col-12{grid-column:1/-1}
+    @media (max-width:900px){.col-4,.col-6{grid-column:1/-1}}
+
+    .card{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px;font-size:1.15rem}
+    .meta{color:var(--muted);font-weight:600}
+
+    /* Form */
+    form{display:grid;gap:12px}
+    .row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+    @media (max-width:700px){.row{grid-template-columns:1fr}}
+    label{font-weight:700;font-size:.95rem}
+    input,select,textarea{width:100%;padding:14px 14px;border-radius:12px;border:1px solid var(--stroke);background:#0f1218;color:var(--ink);outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--focus);box-shadow:0 0 0 3px rgba(125,211,252,.15)}
+    .help{color:var(--muted);font-size:.9rem}
+    .disclaimer{font-size:.85rem;color:var(--muted)}
+
+    /* Footer */
+    footer{padding:36px 0;color:var(--muted)}
+
+    /* Small badges */
+    .badge{display:inline-block;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--stroke);padding:6px 10px;border-radius:999px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header class="top wrap">
+    <div class="brand">PREGNANCY TRAINING <span>• Strong Through Every Trimester</span></div>
+    <nav class="nav">
+      <a href="#program">Program</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#signup">Sign up</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="home">
+      <div class="eyebrow">Pregnancy & Postpartum</div>
+      <h1>Strong Through Every Trimester</h1>
+      <p class="lead">Safe, adaptable workouts for pregnancy and postpartum. Build capacity, confidence, and resilience—without guessing what’s safe.</p>
+      <div class="cta-row">
+        <a href="#signup" class="btn primary">Sign up for updates</a>
+        <a href="#program" class="btn">Explore the program</a>
+      </div>
+    </section>
+
+    <section id="program">
+      <div class="grid">
+        <div class="col-6">
+          <div class="card">
+            <span class="badge">Program Overview</span>
+            <h2>Adaptable training that fits each trimester</h2>
+            <p class="kicker">Evidence-informed strength, mobility, and breath work.</p>
+            <ul>
+              <li>Trimester‑specific progressions and regressions</li>
+              <li>Pelvic floor & core‑friendly strategies</li>
+              <li>Clear coaching cues and video demos</li>
+              <li>Return‑to‑lifting roadmap for postpartum</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <span class="badge">What you’ll need</span>
+            <h3>Minimal equipment. Maximum confidence.</h3>
+            <p class="meta">Dumbbells or kettlebells, a bench or sturdy chair, resistance bands.</p>
+            <p>Sessions are 30–45 minutes, 2–4 days per week, with options for low‑impact conditioning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits">
+      <div class="grid">
+        <div class="col-4"><div class="card"><h3>Train safely</h3><p class="meta">Guidelines that evolve with you—no fear‑mongering.</p></div></div>
+        <div class="col-4"><div class="card"><h3>Feel stronger</h3><p class="meta">Build strength and capacity with smart progressions.</p></div></div>
+        <div class="col-4"><div class="card"><h3>Recover better</h3><p class="meta">Postpartum pathway to return to lifting and life.</p></div></div>
+      </div>
+    </section>
+
+    <section id="signup">
+      <div class="grid">
+        <div class="col-6">
+          <div class="card">
+            <span class="badge">Get started</span>
+            <h2>Sign up for early access</h2>
+            <p class="kicker">Join the waitlist and get safe training tips in your inbox.</p>
+            <form name="signup" method="post" onsubmit="event.preventDefault(); handleSubmit(this)">
+              <div class="row">
+                <div>
+                  <label for="first">First name</label>
+                  <input id="first" name="first" autocomplete="given-name" required />
+                </div>
+                <div>
+                  <label for="last">Last name</label>
+                  <input id="last" name="last" autocomplete="family-name" />
+                </div>
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="row">
+                <div>
+                  <label for="stage">Current stage</label>
+                  <select id="stage" name="stage">
+                    <option value="trying">Trying to conceive</option>
+                    <option value="t1">Trimester 1</option>
+                    <option value="t2">Trimester 2</option>
+                    <option value="t3">Trimester 3</option>
+                    <option value="postpartum">Postpartum</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="goals">Primary goal</label>
+                  <select id="goals" name="goal">
+                    <option>Stay active</option>
+                    <option>Build strength</option>
+                    <option>Ease aches/pain</option>
+                    <option>Return to lifting</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label for="notes">Anything we should know?</label>
+                <textarea id="notes" name="notes" rows="3" placeholder="Optional"></textarea>
+                <p class="help">We’ll send 1–2 emails per month. No spam, ever.</p>
+              </div>
+              <button class="btn primary" type="submit">Join the waitlist</button>
+              <p class="disclaimer">By submitting, you agree to our <a href="#">privacy policy</a>.</p>
+            </form>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <h3>What happens next?</h3>
+            <ol>
+              <li>You’ll get a welcome email with quick-start guidance.</li>
+              <li>We’ll follow up with trimester‑specific tips and sample sessions.</li>
+              <li>When enrollment opens, you’ll have first access and early‑bird pricing.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="wrap">
+      <div>© <span id="yr"></span> Pregnancy Training — Strong Through Every Trimester</div>
+    </footer>
+  </main>
+
+  <script>
+    // Lightweight, form‑handler placeholder. Replace with your backend, Netlify, or Airtable later.
+    function handleSubmit(form){
+      const data = Object.fromEntries(new FormData(form).entries());
+      console.log('Form submission', data);
+      form.reset();
+      const btn = form.querySelector('button[type="submit"]');
+      const prev = btn.textContent;
+      btn.textContent = 'Thanks — you\'re on the list!';
+      btn.disabled = true;
+      setTimeout(()=>{btn.textContent = prev; btn.disabled = false;}, 3800);
+    }
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
