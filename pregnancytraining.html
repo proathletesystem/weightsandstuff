@@ -6,106 +6,31 @@
   <title>Pregnancy Training — Strong Through Every Trimester</title>
   <meta name="description" content="We know how hard it can be to stay active while juggling pregnancy, kids, work and everything that comes with it. We also know how important it is to remain active during this important stage of life. That's why we want to take the guess work out of pregnancy and postpartum training. Here you'll find safe, adaptable and simple workout for pregnancy and postpartum." />
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pregnancy Training — Strong Through Every Trimester" />
+  <meta property="og:description" content="Safe, adaptable workouts for pregnancy and postpartum. Strong through every trimester." />
+  <meta property="og:image" content="images/logo.png" />
+  <meta property="og:url" content="https://proathletesystem.github.io/weightsandstuff/pregnancytraining.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --text:#000;
-      --muted:#333;
-      --accent:#005BAC;   /* Swedish Blue */
-      --accent2:#D62828;  /* American Red */
-      --accent3:#FFCC00;  /* Swedish Yellow */
-      --accent4:#3C3B6E;  /* American Blue */
-      --maxw:1200px;
-      --radius:18px;
-      --shadow:0 8px 20px rgba(0,0,0,.15);
-      --bgfade:0.7;
-    }
-
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%}
-    body{
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-      color: var(--text);
-      background:
-        linear-gradient(rgba(255,255,255,var(--bgfade)), rgba(255,255,255,var(--bgfade))),
-        url("WEIGHTS AND STUFF STRENGTH & CONDITIONING.PNG") no-repeat center center fixed;
-      background-size: cover;
-      line-height:1.55;
-      overflow-x:hidden;
-      text-align:center;
-    }
-
-    a{color:var(--accent);text-decoration:none}
-    a:hover{opacity:.9}
-
-    /* Header / Nav */
-    header{
-      position:sticky; top:0; z-index:40;
-      background:#fff;
-      border-bottom:1px solid #ddd;
-    }
-    .nav{
-      max-width:var(--maxw); margin:auto;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:24px; padding:14px 22px;
-    }
-    .brand strong{
-      font-family:"Bebas Neue", system-ui; font-size:28px; line-height:1;
-    }
-    .navlinks{display:flex; gap:22px; flex-wrap:wrap; align-items:center}
-    .navlinks a{
-      color:var(--text); font-weight:700; text-transform:uppercase;
-    }
-
-    /* Buttons */
-    .cta{
-      padding:12px 18px; border-radius:12px; font-weight:900; text-transform:uppercase;
-      color:#fff; border:none; box-shadow:var(--shadow);
-      transition:.2s ease;
-    }
-    .cta.swedish,
-    .cta.american{
-      background: linear-gradient(135deg, var(--accent3), #ffd84d);
-    }
-    .cta:hover{transform:translateY(-2px);opacity:.95}
-
-    /* Layout */
-    section{max-width:var(--maxw); margin:0 auto; padding:64px 22px}
-    h1,h2,h3{margin:0 0 10px; color:#000}
-    h1{font-family:"Bebas Neue"; font-size:clamp(46px,8vw,92px)}
-    h2{font-family:"Bebas Neue"; font-size:clamp(34px,5vw,52px)}
-    .sub{color:var(--muted); font-size:1.06rem}
-
-    .card{
-      background:#fff; color:#000;
-      border:1px solid #ddd; border-radius:var(--radius);
-      box-shadow:var(--shadow); padding:22px;
-      text-align:left;
-    }
-    .grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
-    @media (max-width:820px){.grid{grid-template-columns:1fr}}
-
-    /* Form */
-    form{display:grid;gap:12px;margin-top:20px}
-    .row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
-    @media (max-width:700px){.row{grid-template-columns:1fr}}
-    label{font-weight:700;font-size:.95rem;text-align:left;display:block}
-    input,select,textarea{width:100%;padding:14px;border-radius:12px;border:1px solid #ccc;background:#fff;color:var(--text);font-family:inherit;font-size:1rem}
-    input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 2px rgba(0,91,172,.2);outline:none}
-    .help{color:var(--muted);font-size:.9rem;text-align:left}
-    .disclaimer{font-size:.85rem;color:var(--muted);text-align:left}
-  </style>
+  <!-- Centralized CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="page-sub">
   <header>
     <nav class="nav">
       <a class="brand" href="index.html#top">
         <div>
           <strong>WEIGHTS AND STUFF</strong><br>
-          <span style="font-size:.78rem;color:var(--muted)">Strength &amp; Conditioning • Massage</span>
+          <span style="font-size:.78rem;color:var(--muted)">Strength &amp; Conditioning &bull; Massage</span>
         </div>
       </a>
       <div class="navlinks">
@@ -113,7 +38,7 @@
         <a href="index.html#massage">Massage</a>
         <a href="index.html#about">About</a>
         <a href="index.html#pricing">Pricing</a>
-        <a href="index.html#calander" class="cta swedish">Book a free consultation now!</a>
+        <a href="index.html#calendar" class="cta swedish">Book a free consultation now!</a>
       </div>
     </nav>
   </header>
@@ -147,11 +72,13 @@
         </article>
         <article class="card">
           <h3>Postpartum</h3>
-          <li>Safe and tested training to guide your postpartum journey</li>
-          <li>Build up strength safely from the inside out</li>
-          <li>Recover the pelvic floor and core to then build up full body strength</li>
-          <li>Smart progressions to keep you strong and capable to care for your growing family</li>
-          <li>20-40 minute sessions 2-4 days per week using minimal equipment</li>
+          <ul class="sub" style="text-align:left">
+            <li>Safe and tested training to guide your postpartum journey</li>
+            <li>Build up strength safely from the inside out</li>
+            <li>Recover the pelvic floor and core to then build up full body strength</li>
+            <li>Smart progressions to keep you strong and capable to care for your growing family</li>
+            <li>20-40 minute sessions 2-4 days per week using minimal equipment</li>
+          </ul>
         </article>
       </div>
     </section>
@@ -210,7 +137,7 @@
           <div>
             <label for="notes">Anything we should know?</label>
             <textarea id="notes" name="notes" rows="3" placeholder="Optional"></textarea>
-            <p class="help">We’ll send 1–2 emails per month. No spam, ever.</p>
+            <p class="help">We'll send 1–2 emails per month. No spam, ever.</p>
           </div>
           <button class="cta swedish" type="submit">Join the waitlist</button>
           <p class="disclaimer">By submitting, you agree to our <a href="#">privacy policy</a>.</p>
@@ -233,4 +160,3 @@
   </script>
 </body>
 </html>
-
