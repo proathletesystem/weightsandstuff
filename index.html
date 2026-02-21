@@ -3,242 +3,312 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Weights and Stuff — Personal Training & Massage Therapy</title>
-  <meta name="description" content="Weights and Stuff offers personal training (pregnancy training, womens lifting groups, sports performance, pain-free movement) and massage therapy (Swedish classic & sports massage). Book a free consult." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Weights and Stuff — Personal Training & Massage Therapy" />
-  <meta property="og:description" content="Strength & conditioning coaching and massage therapy. Book a free consultation today." />
+  <title>Florida Personal Training & Massage Therapy | Weights and Stuff</title>
+
+  <meta name="description" content="Florida-based strength training, sports performance, pregnancy & postpartum coaching, and licensed massage therapy. Elite performance coaching integrated with recovery." />
+
+  <meta property="og:title" content="Florida Personal Training & Massage Therapy | Weights and Stuff" />
+  <meta property="og:description" content="Elite strength coaching and licensed massage therapy in Florida. Train smarter. Recover better." />
   <meta property="og:image" content="images/logo.png" />
   <meta property="og:url" content="https://proathletesystem.github.io/weightsandstuff/" />
   <meta property="og:type" content="website" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Weights and Stuff",
+    "description": "Florida-based strength coaching and licensed massage therapy specializing in sports performance, pregnancy training, and pain-free movement.",
+    "areaServed": "Florida",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    },
+    "url": "https://proathletesystem.github.io/weightsandstuff/"
+  }
+  </script>
+
   <link rel="icon" href="images/favicon.png" type="image/png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Centralized CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root {
+      --accent: #d4af37;
+      --dark: #111;
+      --muted: #777;
+      --light: #f9f9f9;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    section {
+      padding: 100px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background: #fff;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--dark);
+      margin-left: 20px;
+      font-weight: 600;
+    }
+
+    .hero {
+      text-align: center;
+      background: #fff;
+    }
+
+    .notice {
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .sub {
+      color: var(--muted);
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+    }
+
+    .hero-cta {
+      margin-top: 30px;
+    }
+
+    .cta {
+      padding: 14px 26px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 8px;
+      display: inline-block;
+      transition: 0.3s ease;
+    }
+
+    .cta.primary {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .cta.primary:hover {
+      background: #c19c2c;
+    }
+
+    .cta.secondary {
+      border: 2px solid #000;
+      color: #000;
+    }
+
+    .cta.secondary:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .service, .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+      transition: 0.3s ease;
+    }
+
+    .service:hover, .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .about-intro {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-grid {
+      margin-top: 60px;
+      text-align: left;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      background: #111;
+      color: #fff;
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <nav class="nav">
-      <a class="brand" href="#top">
-        <div>
-          <strong>WEIGHTS AND STUFF</strong><br>
-          <span style="font-size:.78rem;color:var(--muted)">Strength &amp; Conditioning &bull; Massage</span>
-        </div>
-      </a>
-      <div class="navlinks">
-        <a href="#training">Training</a>
-        <a href="#massage">Massage</a>
-        <a href="#about">About</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#calendar" class="cta calendar">Book a free consultation now!</a>
-      </div>
-    </nav>
-  </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="notice">
-        For the moment, we only accept consultations and online training clients!
-      </div>
-      <h1>Feel Strong. Move Well. Be Pain-Free.</h1>
-      <p class="sub">At <strong>Weights and Stuff</strong>, we build confidence and capacity—whether you're pregnant, a woman getting started, chasing sports performance, or done with nagging pain. Pair training with restorative massage for faster recovery.</p>
-      <div class="pills">
-        <a class="pill" href="pregnancytraining.html">Pregnancy Training</a>
-        <a class="pill" href="womensliftinggroups.html">Womens Lifting Groups</a>
-        <a class="pill" href="sportsperformance.html">Sports Performance</a>
-        <a class="pill" href="bepainfree.html">Be Pain-Free</a>
-        <a class="pill" href="trainingmassage.html">Train + Massage</a>
-      </div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:18px">
-        <a class="cta swedish" href="#calendar">Book a free consultation now</a>
-        <a class="cta american" href="#pricing">See Packages</a>
-      </div>
-    </section>
+<header>
+  <nav class="nav">
+    <div><strong>WEIGHTS AND STUFF</strong></div>
+    <div>
+      <a href="#training">Training</a>
+      <a href="#massage">Massage</a>
+      <a href="#about">About</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#calendar" class="cta primary">Book Consultation</a>
+    </div>
+  </nav>
+</header>
 
-    <!-- TRAINING -->
-    <section id="training">
-      <h2>Personal Training</h2>
-      <p class="sub">Evidence-informed coaching, strength &amp; conditioning, and habit-based nutrition guidance.</p>
-      <div class="grid">
-        <article class="service">
-          <a class="badge" href="pregnancytraining.html">Pregnancy Training</a>
-          <h3><a href="pregnancytraining.html" style="color:inherit;text-decoration:none">Strong Through Every Trimester</a></h3>
-          <p>Safe, adaptable workouts for pregnancy and postpartum.</p>
-        </article>
-        <article class="service">
-          <a class="badge" href="womensliftinggroups.html">Womens Lifting Groups</a>
-          <h3><a href="womensliftinggroups.html" style="color:inherit;text-decoration:none">Build Muscle &amp; Confidence</a></h3>
-          <p>Beginner-friendly or advanced programs that prioritize technique and sustainable progress.</p>
-        </article>
-        <article class="service">
-          <a class="badge" href="sportsperformance.html">Sports Performance</a>
-          <h3><a href="sportsperformance.html" style="color:inherit;text-decoration:none">Move Faster, Jump Higher</a></h3>
-          <p>Strength, power, speed, and conditioning tailored to your sport.</p>
-        </article>
-        <article class="service">
-          <a class="badge" href="bepainfree.html">Be Pain-Free</a>
-          <h3><a href="bepainfree.html" style="color:inherit;text-decoration:none">Train Around Pain—Then Past It</a></h3>
-          <p>Mobility, stabilization, and graded exposure to get back to what you love.</p>
-        </article>
-        <article class="service">
-          <a class="badge" href="trainingmassage.html">Combine Training + Massage</a>
-          <h3><a href="trainingmassage.html" style="color:inherit;text-decoration:none">Build capacity while you restore</a></h3>
-          <p>Combine the best of two worlds, training and massage therapy.</p>
-        </article>
-      </div>
-    </section>
+<main>
 
-    <!-- MASSAGE -->
-    <section id="massage">
-      <h2>Massage Therapy</h2>
-      <p class="sub">Recover faster and feel better. Sessions are customized to your goals and tolerance.</p>
-      <div class="split">
-        <article class="service"><div class="badge">Swedish Classic</div><h3>Relax, Reset, Restore</h3><p>Smooth, rhythmic techniques to reduce stress, improve circulation, and calm your system.</p></article>
-        <article class="service"><div class="badge">Sports Massage</div><h3>Prep. Perform. Recover.</h3><p>Focused work for athletes or active humans—pre-event or post-training recovery.</p></article>
-      </div>
-    </section>
+<section class="hero">
+  <div class="notice">Florida-Based Strength & Recovery Specialists</div>
 
-  <!-- ABOUT -->
-<section id="about">
-  <div style="max-width:1100px;margin:0 auto;padding:0 20px;text-align:center">
+  <h1>
+    Elite Strength Coaching<br>
+    <span class="accent">Integrated With Recovery</span>
+  </h1>
 
-    <h2>Meet Your Coaches</h2>
+  <p class="sub">
+    We help driven individuals in Florida build real strength, move pain-free,
+    and perform at their highest level through performance coaching and
+    licensed massage therapy — all under one roof.
+  </p>
 
-    <!-- Intro Text -->
-    <p style="max-width:900px;margin:0 auto 50px auto">
-      Our names are Henrik and Megan, husband and wife with two amazing kids. 
-      We met while competing in BMX racing, lived in Sweden for the past 8 years, 
-      and have now relocated to Florida.
-      <br><br>
-      We are both strength coaches and <strong>Licensed Massage Therapists</strong> who believe 
-      recovery is just as important as training. That’s why we combine intelligent 
-      strength development with hands-on therapy for a complete, whole-body approach 
-      to performance, longevity, and pain-free movement.
-    </p>
+  <div class="hero-cta">
+    <a href="#calendar" class="cta primary">Book Your Free Consultation</a>
+    <a href="#pricing" class="cta secondary">Explore Packages</a>
+  </div>
+</section>
 
-    <!-- Two Columns -->
-    <div class="grid" style="align-items:start;text-align:center">
+<section id="about" class="container">
+  <h2>Meet Your Coaches</h2>
 
-      <!-- Coach Henrik -->
-      <article class="service">
-        <h3>Henrik Thorsen</h3>
-        <div class="badge">Performance & Strength Specialist, Licensed Massage Therapist </div>
+  <p class="about-intro">
+    We are Henrik and Megan — Florida-based strength coaches, Licensed Massage Therapists,
+    former competitive athletes, and parents of two.
+    <br><br>
+    Performance without recovery is incomplete. That’s why we combine
+    structured strength programming with hands-on therapy to build
+    resilient, powerful, and durable bodies.
+  </p>
 
-        <p>
-          Henrik brings over 20 years of personal training experience and more 
-          than a decade of coaching athletes and fitness clients. As a former 
-          professional BMX racer, he understands elite performance from the inside out—
-          including the discipline, recovery, and mental resilience required to compete at a high level.
-        </p>
+  <div class="grid about-grid">
+    <div class="service">
+      <h3>Henrik Thorsen</h3>
+      <div class="badge">Performance Specialist | LMT</div>
+      <p>20+ years of training experience. Former professional BMX racer. Certified strength coach integrating high-performance programming with recovery science.</p>
+    </div>
 
-        <p>
-          As a <strong>Licensed Massage Therapist</strong> and certified strength coach, 
-          Henrik integrates performance programming with recovery strategies to help 
-          clients build power, improve movement efficiency, and reduce injury risk.
-        </p>
-
-        <h4>Certifications</h4>
-        <ul class="sub">
-          <li><strong>NASM Performance Enhancement Specialist (PES)</strong></li>
-          <li><strong>NASM Mental Toughness Specialist (MNTS)</strong></li>
-          <li><strong>EuropeActive EQF Level 4 Licensed Personal Trainer</strong></li>
-          <li><strong>Certified Nutrition Specialist (PROAthlete)</strong></li>
-          <li><strong>Certified Eleiko Strength Coach</strong></li>
-        </ul>
-
-        <h4>Coaching Philosophy</h4>
-        <p>
-          Henrik believes every client deserves individualized programming built 
-          around their goals, lifestyle, and current ability. His coaching is rooted 
-          in precision, progression, and purpose—helping clients build real strength, 
-          move confidently, and unlock their full athletic potential.
-        </p>
-      </article>
-
-      <!-- Coach Megan -->
-      <article class="service">
-        <h3>Megan Thorsen</h3>
-        <div class="badge">Strength Coach & Licensed Massage Therapist</div>
-
-        <p>
-          Megan is a well-educated fitness professional with years of hands-on 
-          experience working with clients and athletes. She graduated from 
-          <strong>Cal State Fullerton</strong> with a Bachelor’s degree in Kinesiology, 
-          concentrating in Strength and Conditioning.
-        </p>
-
-        <p>
-          She is a calm and collected coach who prioritizes education and proper 
-          progression, helping clients become healthier, stronger, and the best 
-          versions of themselves.
-        </p>
-
-        <p>
-          Megan has competed in multiple sports including gymnastics, BMX racing, 
-          and volleyball. She thrives on a challenge and uses her athletic background 
-          to design smart exercise progressions tailored to each individual’s needs.
-        </p>
-
-        <p>
-          After having two children of her own, Megan experienced firsthand how 
-          important—and challenging—it is to stay active during pregnancy and 
-          postpartum. This led her to become a Pregnancy and Postpartum Strength Coach, 
-          dedicated to helping mothers stay strong, confident, and supported during 
-          this important stage of life.
-        </p>
-
-        <p>
-          As a <strong>Licensed Massage Therapist</strong> specializing in Swedish Classic 
-          Massage, Megan seamlessly combines strength training with therapeutic 
-          bodywork to both increase performance and enhance recovery.
-        </p>
-      </article>
-
+    <div class="service">
+      <h3>Megan Thorsen</h3>
+      <div class="badge">Strength Coach | LMT</div>
+      <p>Bachelor’s in Kinesiology (Cal State Fullerton). Specialist in pregnancy & postpartum strength. Competitive athletic background across multiple sports.</p>
     </div>
   </div>
 </section>
 
-    <!-- PRICING -->
-    <section id="pricing">
-      <h2>Packages &amp; Pricing</h2>
-      <div class="grid">
-        <div class="card"><div class="badge">Free</div><h3>Discovery Call</h3><p class="sub">Meet your coach, discuss goals &amp; history, map next steps.</p><p style="font-weight:900; font-size:1.4rem">$0</p></div>
-        <div class="card"><a class="badge" href="womensliftinggroups.html">Womens Lifting Group</a><p class="sub">Learn to lift weights with like minded women.</p><p style="font-weight:900; font-size:1.4rem">8 sessions $699</p></div>
-        <div class="card"><div class="badge">Popular</div><h3>Personal Training</h3><ul class="sub"><li>Single: <strong>$110</strong></li><li>4 sessions/month: <strong>$495/month</strong></li></ul></div>
-        <div class="card"><div class="badge">Massage</div><h3>Massage Therapy</h3><ul class="sub"><li>Swedish Classic (60m): <strong>$100</strong></li><li>Sports Massage (60m): <strong>$110</strong></li></ul></div>
-        <div class="card"><div class="badge">Best Value</div><h3><a href="trainingmassage.html" style="color:inherit;text-decoration:none">Train + Massage Bundle</a></h3><p class="sub">4 training + 2 massages/month.</p><p style="font-weight:900; font-size:1.4rem">$499/month</p></div>
-      </div>
-    </section>
+<section id="pricing" class="container">
+  <h2>Packages & Pricing</h2>
 
-    <!-- CALENDAR (fixed spelling from "calander") -->
-    <section id="calendar">
-      <h2>Book a free consultation now!</h2>
-      <div class="calendly-inline-widget" data-url="https://calendly.com/henketh" style="min-width:320px;height:700px;"></div>
-    </section>
-  </main>
+  <div class="grid">
+    <div class="card">
+      <div class="badge">Free</div>
+      <h3>Discovery Call</h3>
+      <p class="price">$0</p>
+    </div>
 
-  <!-- Calendly widget (loaded once) -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  <script type="text/javascript">
-    window.onload = function() {
-      Calendly.initBadgeWidget({
-        url: 'https://calendly.com/henketh',
-        text: 'Book a free consultation now!',
-        color: '#fff800',
-        textColor: '#000000',
-        branding: true
-      });
-    }
-  </script>
+    <div class="card">
+      <div class="badge">Popular</div>
+      <h3>Personal Training</h3>
+      <p class="price">$110 / session</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Massage</div>
+      <h3>Massage Therapy</h3>
+      <p class="price">$100–110</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Best Value</div>
+      <h3>Train + Massage</h3>
+      <p class="price">$499 / month</p>
+    </div>
+  </div>
+</section>
+
+<section id="calendar" class="container">
+  <h2>Book Your Free Consultation</h2>
+  <div class="calendly-inline-widget"
+    data-url="https://calendly.com/henketh"
+    style="min-width:320px;height:700px;">
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Weights and Stuff | Florida Personal Training & Massage Therapy
+</footer>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
 </body>
 </html>
